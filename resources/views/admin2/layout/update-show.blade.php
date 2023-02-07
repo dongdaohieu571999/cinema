@@ -5,8 +5,8 @@
         <div class="col-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Add Show</h4>
-              <p class="card-description">Add Show</p>
+              <h4 class="card-title">Update Show</h4>
+              <p class="card-description">Update Show</p>
               <form class="forms-sample">
                 <div class="form-group">
                   <label for="exampleInputName1">Name show </label>
