@@ -8,7 +8,7 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                  <img src="" alt="">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Cinemax.svg/2560px-Cinemax.svg.png" alt="">
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
