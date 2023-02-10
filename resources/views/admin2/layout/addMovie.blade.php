@@ -7,6 +7,12 @@
         <p class="card-description"> Show time </p>
         <form class="forms-sample">
             <div class="form-group row">
+                <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Movie ID</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="exampleInputUsername2" placeholder="Name of Movie">
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Movie Name</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="exampleInputUsername2" placeholder="Name of Movie">
@@ -16,12 +22,6 @@
                 <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Description</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Content of Movie">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="exampleInputMobile" class="col-sm-3 col-form-label">Classification</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="exampleInputMobile" placeholder="Age restriction or something">
                 </div>
             </div>
             <div class="form-group row">
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Category</label>
+                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Genre</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="exampleInputConfirmPassword2" placeholder="Category of movie">
                 </div>
@@ -45,13 +45,13 @@
             <div class="form-group row">
                 <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Premiere</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="exampleInputConfirmPassword2" placeholder="Movie premiere time">
+                    <input type="datetime-local" class="form-control" id="exampleInputConfirmPassword2" placeholder="Movie premiere time">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Time</label>
+                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Duration</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="exampleInputConfirmPassword2" placeholder="Movie showtime">
+                    <input type="time" class="form-control" id="exampleInputConfirmPassword2" placeholder="Movie showtime">
                 </div>
             </div>
             <div class="form-group row">
@@ -60,6 +60,13 @@
                     <input type="text" class="form-control" id="exampleInputConfirmPassword2" placeholder="Language of Movie">
                 </div>
             </div>
+            <div class="form-group row">
+                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Movie banner</label>
+                <div class="col-sm-9">
+                    <input type="file" class="form-control" id="exampleInputConfirmPassword2" placeholder="Language of Movie">
+                </div>
+            </div>
+
 
             <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
             <button class="btn btn-light">Cancel</button>

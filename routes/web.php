@@ -52,8 +52,8 @@ Route::get('/hello-world/{year}/{yourname?}', function($year, $yourname = null){
 
     });
 
-Route::get('/demo', function(){
-    return view('admin2.layout.demo');
+Route::get('/information', function(){
+    return view('admin2.layout.informationMovie');
 });
 
 Route::get('/add', function(){
