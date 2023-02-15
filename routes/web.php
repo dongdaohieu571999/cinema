@@ -59,3 +59,6 @@ Route::get('/demo', function(){
 Route::get('/add', function(){
     return view('admin2.layout.add');
 });
+Route::get('/addshow', function(){
+    return view('admin2.layout.addshow');
+});
