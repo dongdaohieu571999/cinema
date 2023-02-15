@@ -56,8 +56,27 @@ Route::get('/information', function(){
     return view('admin2.layout.informationMovie');
 });
 
-Route::get('/add', function(){
+Route::get('/addMovie', function(){
     return view('admin2.layout.addMovie');
 });
 
+Route::get('/addrole', function(){
+    return view('admin2.layout.addrole');
+});
 
+// Route::get('/editrole/{role_id}/{role_name}', function($role_id, $role_name){
+//     $edit_role = $role_name;
+//     return view('admin2.layout.editrole')->with('edit_role',$edit_role);
+// });
+
+Route::get('/editrole', function(){   
+    return view('admin2.layout.editrole');
+});
+
+Route::get('/adduser', function(){
+    return view('admin2.layout.adduser');
+});
+
+Route::get('/edituser', function(){
+    return view('admin2.layout.edituser');
+});
