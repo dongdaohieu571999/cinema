@@ -20,8 +20,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                <span class="menu-title">Dashboard</span>
+              <a class="nav-link" href="informationMovie.blade.php">
+                <span class="menu-title">Information Movie</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
@@ -83,7 +83,7 @@
                 <div class="border-bottom">
                   <h6 class="font-weight-normal mb-3">Projects</h6>
                 </div>
-                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
+                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a Movie</button>
                 <div class="mt-4">
                   <div class="border-bottom">
                     <p class="text-secondary">Categories</p>
