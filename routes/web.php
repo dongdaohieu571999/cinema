@@ -13,44 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', function () {
+// Admin Routes
+Route::get('/admin', function () {
 
     return view('admin2.layout.index');
 
 });
-
-Route::get('/hello-world', function(){
-
-    return view('hello-world');
-
-});
-
-Route::get('/hello-world/{year}', function($year){
-
-    echo ('Hello world, ' . $year);
-
-    // return view('hello-world');
-
-});
-
-Route::get('/hello-world/{year}/{yourname?}', function($year, $yourname = null){
-
-    $hello_string = '';
-
-    if($yourname == null){
-
-    $hello_string = 'Hello world, ' . $year;
-
-    }else{
-
-    $hello_string = 'Hello world, ' . $year . '. My name is ' . $yourname;
-
-    }
-
-    return view('hello-world')->with('hello_str', $hello_string);
-
-    });
 
 Route::get('/information', function(){
     return view('admin2.layout.informationMovie');
@@ -79,4 +47,15 @@ Route::get('/adduser', function(){
 
 Route::get('/edituser', function(){
     return view('admin2.layout.edituser');
+});
+
+
+// User Routes
+
+Route::get('/login', function(){
+    return view('user.layout.login');
+});
+
+Route::Get('/register', function(){
+    return view('user.layout.register');
 });
