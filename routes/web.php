@@ -60,6 +60,10 @@ Route::get('/addMovie', function(){
     return view('admin2.layout.addMovie');
 });
 
+Route::get('/addshow', function(){
+    return view('admin2.layout.addshow');
+});
+
 Route::get('/addrole', function(){
     return view('admin2.layout.addrole');
 });
