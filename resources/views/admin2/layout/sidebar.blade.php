@@ -8,49 +8,49 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                  <img src="assets/images/faces/face1.jpg" alt="profile">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Cinemax.svg/2560px-Cinemax.svg.png" alt="">
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">David Grey. H</span>
+                  <span class="font-weight-bold mb-2">Group 2</span>
                   <span class="text-secondary text-small">Project Manager</span>
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                <span class="menu-title">Dashboard</span>
+              <a class="nav-link" href="informationMovie.blade.php">
+                <span class="menu-title">Information Movie</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Basic UI Elements</span>
+                <span class="menu-title">User Management</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">User Role Management</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">User Information Management</a></li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/icons/mdi.html">
-                <span class="menu-title">Icons</span>
+                <span class="menu-title">Show Management</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/forms/basic_elements.html">
-                <span class="menu-title">Forms</span>
+                <span class="menu-title">Movie Management</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="pages/charts/chartjs.html">
                 <span class="menu-title">Charts</span>
                 <i class="mdi mdi-chart-bar menu-icon"></i>
@@ -67,7 +67,7 @@
                 <span class="menu-title">Sample Pages</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-medical-bag menu-icon"></i>
-              </a>
+              </a> -->
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
@@ -78,12 +78,12 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item sidebar-actions">
+            <!-- <li class="nav-item sidebar-actions">
               <span class="nav-link">
                 <div class="border-bottom">
                   <h6 class="font-weight-normal mb-3">Projects</h6>
                 </div>
-                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
+                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a Movie</button>
                 <div class="mt-4">
                   <div class="border-bottom">
                     <p class="text-secondary">Categories</p>
@@ -94,6 +94,6 @@
                   </ul>
                 </div>
               </span>
-            </li>
+            </li> -->
           </ul>
         </nav>

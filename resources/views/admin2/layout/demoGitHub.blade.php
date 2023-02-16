@@ -1,6 +1,7 @@
-
 @extends('admin2.layout.index')
 
 @section('content')
-    This is a product add page!
+
+<h1>Đây là demo sử dụng Github</h1>
+
 @endsection
