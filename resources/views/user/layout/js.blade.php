@@ -1,0 +1,1 @@
+<script src="AdminCSS/assets/vendors/js/vendor.bundle.base.js"></script>
