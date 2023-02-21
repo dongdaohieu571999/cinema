@@ -8,11 +8,7 @@
                 <p class="card-description">Add Show</p>
                 <form class="forms-sample">
                     <div class="form-group">
-                        <label for="show_id"> ID </label>
-                        <input type="text" class="form-control" id="show_id" placeholder=" ID Show">
-                    </div>
-                    <div class="form-group">
-                        <label for="m_id"> ID Movie </label>
+                        <label for="m_id"> Movie Name </label>
                         <input type="text" class="form-control" id="m_id" placeholder="ID Movie">
                     </div>
                     <div class="form-group">

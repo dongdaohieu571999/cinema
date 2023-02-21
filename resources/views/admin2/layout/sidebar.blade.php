@@ -33,19 +33,19 @@
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">User Role Management</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">User Information Management</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/RoleManagement">User Role Management</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/UserInformation">User Information Management</a></li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/icons/mdi.html">
+              <a class="nav-link" href="/ShowManagement">
                 <span class="menu-title">Show Management</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/forms/basic_elements.html">
+              <a class="nav-link" href="/MovieManagement">
                 <span class="menu-title">Movie Management</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>

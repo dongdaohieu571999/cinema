@@ -4,8 +4,8 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Add New Movie</h4>
-            <p class="card-description"> Fill all required fields to add new movie </p>
+            <h4 class="card-title">Edit Movie</h4>
+            <p class="card-description"> Update information for this Movie </p>
             <form class="forms-sample">
                 <div class="form-group row">
                     <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Movie Name</label>

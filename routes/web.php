@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Default Page
+
+Route::get('/', function () {
+    return view('admin2.layout.index');
+});
+
 // Admin Routes
 Route::get('/admin', function () {
 
@@ -20,7 +26,7 @@ Route::get('/admin', function () {
 
 });
 
-Route::get('/information', function(){
+Route::get('/MovieManagement', function(){
     return view('admin2.layout.informationMovie');
 });
 
@@ -28,11 +34,27 @@ Route::get('/addMovie', function(){
     return view('admin2.layout.addMovie');
 });
 
-Route::get('/addshow', function(){
+Route::get('editMovie', function(){
+    return view('admin2.layout.editMovie');
+});
+
+Route::get('/ShowManagement', function(){
+    return view('admin2.layout.informationShow');
+}); 
+
+Route::get('/addShow', function(){
     return view('admin2.layout.addshow');
 });
 
-Route::get('/addrole', function(){
+Route::get('editShow', function(){
+    return view('admin2.layout.editShow');
+});
+
+Route::get('/RoleManagement', function(){
+    return view('admin2.layout.informationRole');
+});
+
+Route::get('/addRole', function(){
     return view('admin2.layout.addrole');
 });
 
@@ -41,15 +63,19 @@ Route::get('/addrole', function(){
 //     return view('admin2.layout.editrole')->with('edit_role',$edit_role);
 // });
 
-Route::get('/editrole', function(){   
+Route::get('/editRole', function(){   
     return view('admin2.layout.editrole');
 });
 
-Route::get('/adduser', function(){
+Route::get('/UserInformation', function(){
+    return view('admin2.layout.informationUser');
+});
+
+Route::get('/addUser', function(){
     return view('admin2.layout.adduser');
 });
 
-Route::get('/edituser', function(){
+Route::get('/editUser', function(){
     return view('admin2.layout.edituser');
 });
 
