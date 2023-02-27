@@ -89,3 +89,9 @@ Route::get('/login', function(){
 Route::Get('/register', function(){
     return view('user.layout.register');
 });
+
+// Website Routes
+
+Route::get('/seat-plan', function(){
+    return view('website.layout.movie-seat-plan-test');
+});
