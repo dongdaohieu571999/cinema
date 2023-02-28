@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('premiere');
             $table->string('language');
             $table->string('movie_banner');
+            $table->boolean('now_playing');
+            $table->boolean('coming_soon');
             
         });
     }
@@ -37,4 +39,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('movie');
     }
-};
+}; 
