@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('show_id')->unsigned(); 
             $table ->foreign('show_id')->references('show_id')->on('show');
             $table->string('price');
+            $table->timestamps();
         });
     }
 

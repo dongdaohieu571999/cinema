@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,75 +18,87 @@ use Illuminate\Support\Facades\Route;
 
 
 // Admin Routes
-Route::get('/admin', function () {
+    // Admin Homepage
+    Route::get('/admin', function () {
 
-    return view('admin2.layout.index');
+        return view('admin2.layout.index');
 
-});
+    });
 
-Route::get('/MovieManagement', function(){
-    return view('admin2.layout.informationMovie');
-});
+    // Admin Movie Management
+    Route::get('/MovieManagement', function(){
+        return view('admin2.layout.informationMovie');
+    });
 
-Route::get('/addMovie', function(){
-    return view('admin2.layout.addMovie');
-});
+    Route::get('/addMovie', function(){
+        return view('admin2.layout.addMovie');
+    });
 
-Route::get('editMovie', function(){
-    return view('admin2.layout.editMovie');
-});
+    Route::get('editMovie', function(){
+        return view('admin2.layout.editMovie');
+    });
 
-Route::get('/ShowManagement', function(){
-    return view('admin2.layout.informationShow');
-}); 
+    // Admin Show Management
+    Route::get('/ShowManagement', function(){
+        return view('admin2.layout.informationShow');
+    }); 
 
-Route::get('/addShow', function(){
-    return view('admin2.layout.addshow');
-});
+    Route::get('/addShow', function(){
+        return view('admin2.layout.addshow');
+    });
 
-Route::get('editShow', function(){
-    return view('admin2.layout.editShow');
-});
+    Route::get('editShow', function(){
+        return view('admin2.layout.editShow');
+    });
 
-Route::get('/RoleManagement', function(){
-    return view('admin2.layout.informationRole');
-});
+    // Admin Role Management
+    Route::get('/RoleManagement', function(){
+        return view('admin2.layout.informationRole');
+    });
 
-Route::get('/addRole', function(){
-    return view('admin2.layout.addrole');
-});
+    Route::get('/addRole', function(){
+        return view('admin2.layout.addrole');
+    });
 
-// Route::get('/editrole/{role_id}/{role_name}', function($role_id, $role_name){
-//     $edit_role = $role_name;
-//     return view('admin2.layout.editrole')->with('edit_role',$edit_role);
-// });
+    // Route::get('/editrole/{role_id}/{role_name}', function($role_id, $role_name){
+    //     $edit_role = $role_name;
+    //     return view('admin2.layout.editrole')->with('edit_role',$edit_role);
+    // });
 
-Route::get('/editRole', function(){   
-    return view('admin2.layout.editrole');
-});
+    Route::get('/editRole', function(){   
+        return view('admin2.layout.editrole');
+    });
 
-Route::get('/UserInformation', function(){
-    return view('admin2.layout.informationUser');
-});
+    // Admin User Management
+    Route::get('/UserInformation', function(){
+        return view('admin2.layout.informationUser');
+    });
 
-Route::get('/addUser', function(){
-    return view('admin2.layout.adduser');
-});
+    Route::get('/addUser', function(){
+        return view('admin2.layout.adduser');
+    });
 
-Route::get('/editUser', function(){
-    return view('admin2.layout.edituser');
-});
+    Route::get('/editUser', function(){
+        return view('admin2.layout.edituser');
+    });
 
 
 // User Routes
 
-Route::get('/login', function(){
-    return view('website.layout.login');
-});
+    // User Login
+    Route::get('/login', [UserController::class,'showLogin'])
+        ->name('login');
 
-Route::Get('/register', function(){
-    return view('website.layout.register');
-});
+    
+    Route::post('/login_auth', [UserController::class, 'login'])
+        ->name('auth.login');
+
+    // User Registration
+    Route::get('/register', [UserController::class,'showRegister'])
+        ->name('register');
+
+    Route::post('/register_auth', [UserController::class, 'store'])
+        ->name('auth.register');    
 
 // Website Routes
 
