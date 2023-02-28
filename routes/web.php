@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 // Default Page
 
-Route::get('/', function () {
-    return view('admin2.layout.index');
-});
 
 // Admin Routes
 Route::get('/admin', function () {
@@ -83,9 +80,15 @@ Route::get('/editUser', function(){
 // User Routes
 
 Route::get('/login', function(){
-    return view('user.layout.login');
+    return view('website.layout.login');
 });
 
 Route::Get('/register', function(){
-    return view('user.layout.register');
+    return view('website.layout.register');
+});
+
+// Website Routes
+
+Route::get('/', function(){
+    return view('website.layout.homepage');
 });
