@@ -90,14 +90,14 @@ use App\Http\Controllers\UserController;
         ->name('login');
 
     
-    Route::post('/login_auth', [UserController::class, 'login'])
+    Route::post('/login_successful', [UserController::class, 'login'])
         ->name('auth.login');
 
     // User Registration
     Route::get('/register', [UserController::class,'showRegister'])
         ->name('register');
 
-    Route::post('/register_auth', [UserController::class, 'store'])
+    Route::post('/register_successful', [UserController::class, 'store'])
         ->name('auth.register');   
     
     Route::get('/logout', [UserController::class,'logout'])
