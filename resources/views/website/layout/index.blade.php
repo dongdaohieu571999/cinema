@@ -1,6 +1,10 @@
 @INCLUDE('website.layout.head')
 
-@INCLUDE('website.layout.navbar')
+@if(session()->has('user'))
+    @INCLUDE('website.layout.navbar-log')
+@else
+    @INCLUDE('website.layout.navbar-unlog')
+@endif
 
 
 <div class="main-panel">

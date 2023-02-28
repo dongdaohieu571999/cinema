@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('role', function (Blueprint $table) {
             $table->increments('role_id');
             $table->string('role_name');
+            $table->timestamps();
         });
     }
 
@@ -29,3 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('role');
     }
 };
+

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('seat_row');
             $table->string('seat_number');
             $table->boolean('isEmpty');
+            $table->timestamps();
         });
     }
 

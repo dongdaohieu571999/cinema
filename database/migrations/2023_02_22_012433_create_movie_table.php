@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('movie_banner');
             $table->boolean('now_playing');
             $table->boolean('coming_soon');
+            $table->timestamps();
             
         });
     }

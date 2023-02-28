@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('ticket_id')->unsigned(); 
             $table ->foreign('ticket_id')->references('ticket_id')->on('ticket');
             $table->string('booking_date');
+            $table->timestamps();
         });
     }
 

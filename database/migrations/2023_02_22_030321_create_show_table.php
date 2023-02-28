@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('stt_time');
             $table->string('end_time');
             $table->string('showdate');
+            $table->timestamps();
         });
     }
 
