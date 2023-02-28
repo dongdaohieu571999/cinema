@@ -20,8 +20,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="informationMovie.blade.php">
-                <span class="menu-title">Information Movie</span>
+              <a class="nav-link" href="/admin">
+                <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
