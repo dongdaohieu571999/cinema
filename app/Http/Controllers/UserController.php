@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Auth\SessionGuard\users;
+use Session;
 
 class UserController extends Controller
 
@@ -60,6 +60,9 @@ class UserController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
 
             if (Auth::user()->role_id == 2) {
+            
+                $userEmail = Auth::user()->full_name;
+                $request->session()->put('user',$userEmail);
 
             return view('website.layout.homepage');
 
@@ -158,8 +161,9 @@ class UserController extends Controller
     {
 
         Auth::logout();
+        Session::flush();
 
-        return redirect()->route('showLogin');
+        return redirect()->route('login');
 
     }
 

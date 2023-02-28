@@ -98,10 +98,14 @@ use App\Http\Controllers\UserController;
         ->name('register');
 
     Route::post('/register_auth', [UserController::class, 'store'])
-        ->name('auth.register');    
+        ->name('auth.register');   
+    
+    Route::get('/logout', [UserController::class,'logout'])
+        ->name('logout');
 
 // Website Routes
 
 Route::get('/', function(){
     return view('website.layout.homepage');
-});
+})
+    ->name('home');
