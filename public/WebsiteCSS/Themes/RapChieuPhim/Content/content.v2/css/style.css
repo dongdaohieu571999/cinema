@@ -2082,16 +2082,16 @@ input[type=checkbox]{
   /*text-align: left;*/
 
 }
-.form_dangnhap div input[type=text],input[type=password]{
+/* .form_dangnhap div input[type=text],input[type=password]{
   /*display: inline;*/
-  width: 400px;
+  /*width: 400px;
   padding-left: 10px;
   border-radius: 20px;
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 10px;
   border: solid 1px #949494;
-}
+} */
 .menu_gioithieu{
   text-align: center;
   /*margin-bottom: 20px;*/
