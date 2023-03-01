@@ -26,10 +26,16 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{route('adHomepage')}}">
+                <span class="menu-title">Return to Customer Page</span>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">User Management</span>
                 <i class="menu-arrow"></i>
-                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
@@ -41,7 +47,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/ShowManagement">
                 <span class="menu-title">Show Management</span>
-                <i class="mdi mdi-contacts menu-icon"></i>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">

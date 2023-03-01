@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -52,22 +53,28 @@ use App\Http\Controllers\UserController;
     });
 
     // Admin Role Management
-    Route::get('/RoleManagement', function(){
-        return view('admin2.layout.informationRole');
-    });
+    Route::get('/RoleManagement', [RoleController::class, 'index'])
+        -> name('role.index');
 
-    Route::get('/addRole', function(){
-        return view('admin2.layout.addrole');
-    });
+    Route::get('/addRole', [RoleController::class, 'role_add'])
+        -> name('role.add');
+
+    Route::post('/role_added', [RoleController::class, 'role_store'])
+        -> name('role.store');
 
     // Route::get('/editrole/{role_id}/{role_name}', function($role_id, $role_name){
     //     $edit_role = $role_name;
     //     return view('admin2.layout.editrole')->with('edit_role',$edit_role);
     // });
 
-    Route::get('/editRole', function(){   
-        return view('admin2.layout.editrole');
-    });
+    Route::get('/editRole/{role_id}', [RoleController::class, 'role_edit'])
+        -> name('role.edit');
+
+    Route::post('/role_updated', [RoleController::class, 'role_update'])
+        -> name('role.update');
+
+    Route::get('/role_delete/{role_id}', [RoleController::class, 'role_destroy'])
+        ->name('role.delete');
 
     // Admin User Management
     Route::get('/UserInformation', function(){
@@ -81,6 +88,12 @@ use App\Http\Controllers\UserController;
     Route::get('/editUser', function(){
         return view('admin2.layout.edituser');
     });
+
+    // Admin Page Redirect
+    Route::get('/adHomepage', function(){
+        return view('website.layout.adHomepage');
+    })
+        ->name('adHomepage');
 
 
 // User Routes

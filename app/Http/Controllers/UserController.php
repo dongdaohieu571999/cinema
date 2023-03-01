@@ -67,7 +67,8 @@ class UserController extends Controller
             return view('website.layout.homepage');
 
             } else {
-
+                $userEmail = Auth::user()->full_name;
+                $request->session()->put('user',$userEmail);
                 return view('admin2.layout.index');
 
             }
