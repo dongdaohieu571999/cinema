@@ -12,9 +12,9 @@ class Role extends Model
     protected $table = 'role';
     protected $primaryKey = 'role_id';
     
-    public function role()
+    public function user()
     {
-        return $this->belongsTo('App\Models\Role','role_id');
+        return $this->hasMany('App\Models\User');
     }
 
     public $fillable = [

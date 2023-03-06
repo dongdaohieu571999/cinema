@@ -77,18 +77,23 @@ use App\Http\Controllers\UserController;
         ->name('role.delete');
 
     // Admin User Management
-    Route::get('/UserInformation', function(){
-        return view('admin2.layout.informationUser');
-    });
 
-    Route::get('/addUser', function(){
-        return view('admin2.layout.adduser');
-    });
+    Route::get('/addUser', [UserController::class, 'user_add'])
+        -> name('user.add');
 
-    Route::get('/editUser', function(){
-        return view('admin2.layout.edituser');
-    });
 
+    Route::get('/UserManagement', [UserController::class, 'index'])
+        -> name('user.index');
+
+    Route::post('/user_added', [UserController::class, 'admin_user_store'])
+        -> name('admin.user.store');
+
+    Route::get('/editUser/{user_id}', [UserController::class, 'admin_user_edit'])
+        -> name('admin.user.edit');
+
+    Route::post('/updateUser/{user_id}', [UserController::class, 'admin_user_update'])
+        -> name('admin.user.update');
+        
     // Admin Page Redirect
     Route::get('/adHomepage', function(){
         return view('website.layout.adHomepage');

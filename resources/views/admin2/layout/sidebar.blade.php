@@ -40,7 +40,7 @@
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="/RoleManagement">User Role Management</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="/UserInformation">User Information Management</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/UserManagement">User Information Management</a></li>
                 </ul>
               </div>
             </li>
