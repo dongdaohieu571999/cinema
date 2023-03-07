@@ -26,6 +26,27 @@
                     <p><button class="button">Delete</button></p>
                 </div>
             </div>
+
+            @foreach($movie as $key => $value)
+                <img src="{{$value -> $movie_banner}}" alt="" style="width:100%">
+                <div class="container">
+                    <h2>Movie name: {{ $value->movie_name }}</h2>
+                    <p class="title">ID: </p>
+                    <p>Directors: {{ $value->movie_director }}</p>
+                    <p>Actors: {{ $value->movie_actor }}</p>
+                    <p>Genre: {{ $value->movie_genre }}</p>
+                    <p>Premiere: {{ $value->movie_premiere }}</p>
+                    <p>Duration: {{ $value->movie_duration }}</p>
+                    <p>Language: {{ $value->movie_language }}</p>
+                    <p>Description: {{ $value->movie_description }}</p>
+                    <button class="button">
+                        <a href="{{asset('movie/edit/'.$value->$movie)}}">Edit</a>
+                    </button>
+                    <button class="button">
+                        <a href="{{asset('movie/delete/'.$value->movie_id)}}" onclick="return confirm('Bạn có chắc muốn xóa?')">Delete</a>
+                    </button>
+                </div>
+            @endforeach
         </div>
 
 

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\AddControllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,7 +69,7 @@ Route::get('/addrole', function(){
 //     return view('admin2.layout.editrole')->with('edit_role',$edit_role);
 // });
 
-Route::get('/editrole', function(){   
+Route::get('/editrole', function(){
     return view('admin2.layout.editrole');
 });
 
