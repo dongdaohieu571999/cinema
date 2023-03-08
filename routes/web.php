@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\AddControllers;
+use App\Http\Controllers\AddMovieController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,7 +57,7 @@ Route::get('/information', function(){
 });
 
 Route::get('/addMovie', function(){
-    return view('admin2.layout.addMovie');
+    return view('admin2.layout.addMovie') ;
 });
 
 Route::get('/addrole', function(){
@@ -80,3 +80,6 @@ Route::get('/adduser', function(){
 Route::get('/edituser', function(){
     return view('admin2.layout.edituser');
 });
+
+
+Route::post('/storeMovie', [AddMovieController::class, 'postMovie'])->name('storeMovie');
