@@ -82,4 +82,4 @@ Route::get('/edituser', function(){
 });
 
 
-Route::post('/storeMovie', [AddMovieController::class, 'postMovie'])->name('storeMovie');
+

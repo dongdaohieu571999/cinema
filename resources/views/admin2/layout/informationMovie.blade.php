@@ -24,11 +24,10 @@
                     <th> Action </th>
                 </tr>
                 </thead>
-                @foreach($table as $key => $table)
                 <tbody>
                 <tr>
-                    <td> {{$key + 1}} </td>
-                    <td> {{$table -> movie_name}} </td>
+                    <td> id </td>
+                    <td> Name </td>
                     <td> Description </td>
                     <td> Directors </td>
                     <td> tui thu viet o day sieu dai cho cau xem nay ^^ </td>
@@ -44,7 +43,6 @@
                     </td>
                 </tr>
                 </tbody>
-                @endforeach
             </table>
         </div>
     </div>
