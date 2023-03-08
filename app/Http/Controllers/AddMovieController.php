@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use voku\helper\ASCII;
 
-class AddController extends Controller
+class AddMovieController extends Controller
 {
     public function add(){
         $movie = Movie::all();
