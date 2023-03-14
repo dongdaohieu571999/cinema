@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" id="exampleInputName1" name="role_name" placeholder="Name">
                       </div>
                       <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
-                      <button class="btn btn-light">Cancel</button>
+                      <a href="/UserManagement"><button class="btn btn-light" style="pointer-events:none">Cancel</button></a>
                     </form>
                   </div>
 

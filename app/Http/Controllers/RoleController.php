@@ -21,13 +21,13 @@ class RoleController extends Controller
     public function index()
     {
         $roles=Role::all();
-        return view('admin2.layout.informationRole', compact('roles'));
+        return view('admin2.layout.User.informationRole', compact('roles'));
 
     }
 
     public function role_add()
     {
-        return view('admin2.layout.addrole');
+        return view('admin2.layout.User.addrole');
     }
 
     public function role_store(Request $request)
@@ -44,7 +44,7 @@ class RoleController extends Controller
     public function role_edit($role_id)
     {
         $role = Role::find($role_id);
-        return view('admin2.layout.editrole', ['role' => $role]);
+        return view('admin2.layout.User.editrole', ['role' => $role]);
     }
 
     public function role_update(Request $request)

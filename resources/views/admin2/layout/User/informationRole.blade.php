@@ -23,7 +23,7 @@
                         <td>{{ $role->role_name }}</td>
                         <td> 
                             <a href="{{route('role.edit', $role->role_id)}}"><button type="submit" class="btn btn-gradient-primary mr-2">Edit</button></a>
-                            <a href="{{route('role.delete', $role->role_id)}}"><button class="btn btn-light">Delete</button></a>
+                            <a href="{{route('role.delete', $role->role_id)}}" onclick="return confirm('Are you sure you want to delete this item?');"><button class="btn btn-light">Delete</button></a>
                         </td>
                     </tr>
                     @endforeach

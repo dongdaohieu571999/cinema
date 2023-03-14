@@ -91,8 +91,11 @@ use App\Http\Controllers\UserController;
     Route::get('/editUser/{user_id}', [UserController::class, 'admin_user_edit'])
         -> name('admin.user.edit');
 
-    Route::post('/updateUser/{user_id}', [UserController::class, 'admin_user_update'])
+    Route::post('/updateUser', [UserController::class, 'admin_user_update'])
         -> name('admin.user.update');
+    
+    Route::get('/deleteUser/{user_id}', [UserController::class, 'admin_user_delete'])
+        -> name('admin.user.delete');
         
     // Admin Page Redirect
     Route::get('/adHomepage', function(){

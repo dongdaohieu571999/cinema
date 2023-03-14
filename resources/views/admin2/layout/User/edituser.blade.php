@@ -5,10 +5,11 @@
     <div class="card-body">
                         <h4 class="card-title">User Management</h4>
                         <p class="card-description"> Edit User </p>
-                        <form class="forms-sample" action="route{{route('admin.user.update', $user->user_id) }}" method="POST" enctype="multipart/form-data">
+                        <form class="forms-sample" action="{{ route('admin.user.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputName2">Full Name</label>
+                                <input type="hidden" class="form-control" id="exampleInputName1" name="user_id" placeholder="Name" value="{{$user->user_id}}">
                                 <input type="text" class="form-control" id="exampleInputName2" placeholder="Full Name" name ="full_name" value="{{ $user-> full_name}}">
                             </div>
                             <div class="form-group">
@@ -43,7 +44,7 @@
                                     </span>
                                 </div> -->
                             </div>                   
-                        <button type="submit" class="btn btn-gradient-primary mr-2" style="pointer-events:none">Save</button>
+                        <button type="submit" class="btn btn-gradient-primary mr-2" >Save</button>
                         <a href="/UserManagement"><button class="btn btn-light" style="pointer-events:none">Cancel</button></a>
                         </form>
                     </div>

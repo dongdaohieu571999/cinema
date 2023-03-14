@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
+use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
 
@@ -22,14 +23,14 @@ class UserController extends Controller
     public function index()
     {
         $users=User::all();
-        return view('admin2.layout.informationUser', compact('users'));
+        return view('admin2.layout.User.informationUser', compact('users'));
 
     }
 
     public function user_add()
     {
         $roles=Role::all();
-        return view('admin2.layout.adduser', ['roles' => $roles]);
+        return view('admin2.layout.User.adduser', ['roles' => $roles]);
     }
 
     public function admin_user_store(Request $request)
@@ -88,7 +89,7 @@ class UserController extends Controller
 
             $newUser->full_name = $request->full_name;
 
-            $newUser->role_id = $remember->role_id;
+            $newUser->role_id = $request->role_id;
 
             $newUser->phone = $request->phone;
 
@@ -114,13 +115,14 @@ class UserController extends Controller
     {
         $roles = Role::all();
         $user = User::with('roleid') -> find($user_id);
-        return view('admin2.layout.edituser', ['user' => $user, 'roles' => $roles]);
+        return view('admin2.layout.User.edituser', ['user' => $user, 'roles' => $roles]);
     }
     
     public function admin_user_update(Request $request)
     {
-        $fileName="";
+        
         if ($request->isMethod('POST')){
+            $fileName="";
             if ($request->hasFile('avatar')) {
 
                 $file = $request->file('avatar');
@@ -133,27 +135,27 @@ class UserController extends Controller
     
             } 
     
-            $user = User::find($user_id);
+            $user = User::find($request->input('user_id'));
     
-            if ($user != null) {
-    
-                $user = new User();
+            if ($user != null) {                    
     
                 $user->email = $request->email;
-
-                if($user->password != $request->password){
-                    $user->password = Hash::make($request->password);
-                }             
     
                 $user->full_name = $request->full_name;
     
                 $user->role_id = $request->role_id;
     
                 $user->phone = $request->phone;
+
+                if ($user->password != $request->password){
+                    $user->password = Hash::make($request->password);
+                }
     
                 if($fileName){
                     $user->avatar = $fileName;
                 }
+
+              
     
                 $user->save();
     
@@ -170,6 +172,27 @@ class UserController extends Controller
 
     }
     
+    public function admin_user_delete($user_id)
+
+    {
+
+        $user = User::find($user_id);
+
+        $image_path = "/UserCSS/Users_Avatar/.$user->avatar"; // Value is not URL but directory file path
+
+        if(File::exists($image_path)) {
+
+            File::delete($image_path);
+
+        }
+
+        $user->delete();
+
+        return redirect()->route('user.index')
+
+        ->with('success', 'User deleted successfully');
+
+    }
     
     // User Function
 

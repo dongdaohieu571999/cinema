@@ -31,7 +31,7 @@
                             <td><img src="{{ asset('UserCSS/Users_Avatar/'.$user->avatar) }}" alt="" border= height=300 width=400></td>
                             <td> 
                                 <a href="{{ route('admin.user.edit', $user->user_id) }}"><button type="submit" class="btn btn-gradient-primary mr-2">Edit</button></a>
-                                <button class="btn btn-light">Delete</button>
+                                <a href="{{ route('admin.user.delete', $user->user_id) }}" onclick="return confirm('Are you sure you want to delete this item?');"><button class="btn btn-light">Delete</button></a>
                             </td>
                         </tr>
                         @endforeach
