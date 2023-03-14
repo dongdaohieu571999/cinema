@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
+        'avatar'
     ];
 
     /**
@@ -33,6 +35,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $primaryKey = 'user_id';
+
     /**
      * The attributes that should be cast.
      *
@@ -41,4 +45,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roleid() {
+        return $this->belongsTo('App\Models\Role','role_id');
+    }
 }
