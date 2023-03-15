@@ -3,6 +3,8 @@
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HallController;
+use App\Http\Controllers\SeatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,11 +64,6 @@ use App\Http\Controllers\UserController;
     Route::post('/role_added', [RoleController::class, 'role_store'])
         -> name('role.store');
 
-    // Route::get('/editrole/{role_id}/{role_name}', function($role_id, $role_name){
-    //     $edit_role = $role_name;
-    //     return view('admin2.layout.editrole')->with('edit_role',$edit_role);
-    // });
-
     Route::get('/editRole/{role_id}', [RoleController::class, 'role_edit'])
         -> name('role.edit');
 
@@ -103,6 +100,44 @@ use App\Http\Controllers\UserController;
     })
         ->name('adHomepage');
 
+
+    // Admin Hall Management
+    Route::get('/HallManagement', [HallController::class, 'index'])
+        -> name('hall.index');
+
+    Route::get('/addHall', [HallController::class, 'hall_add'])
+        -> name('hall.add');
+
+    Route::post('/Hall_added', [HallController::class, 'hall_store'])
+        -> name('hall.store');
+
+    Route::get('/editHall/{hall_id}', [HallController::class, 'hall_edit'])
+        -> name('hall.edit');
+
+    Route::post('/hall_updated', [HallController::class, 'hall_update'])
+        -> name('hall.update');
+
+    Route::get('/hall_delete/{hall_id}', [HallController::class, 'hall_destroy'])
+        ->name('hall.delete');
+
+    // Admin Seat Management
+    Route::get('/SeatManagement', [SeatController::class, 'index'])
+        -> name('seat.index');
+
+    Route::get('/addSeat', [SeatController::class, 'seat_add'])
+        -> name('seat.add');
+
+    Route::post('/Seat_added', [SeatController::class, 'seat_store'])
+        -> name('seat.store');
+
+    Route::get('/editSeat/{seat_id}', [SeatController::class, 'seat_edit'])
+        -> name('seat.edit');
+
+    Route::post('/Seat_updated', [SeatController::class, 'seat_update'])
+        -> name('seat.update');
+
+    Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_delete'])
+        ->name('seat.delete');
 
 // User Routes
 

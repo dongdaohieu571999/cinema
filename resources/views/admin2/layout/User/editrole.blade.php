@@ -15,7 +15,7 @@
                      
                       </div>
                       <button type="submit" class="btn btn-gradient-primary mr-2">Save</button>
-                      <button class="btn btn-light">Cancel</button>
+                      <a href="/RoleManagement"><button class="btn btn-light" style="pointer-events:none">Cancel</button></a>
                     </form>
                   </div>
 

@@ -56,6 +56,18 @@
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/HallManagement">
+                <span class="menu-title">Hall Management</span>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/SeatManagement">
+                <span class="menu-title">Seat Management</span>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              </a>
+            </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="pages/charts/chartjs.html">
                 <span class="menu-title">Charts</span>
