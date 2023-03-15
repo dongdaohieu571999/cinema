@@ -9,12 +9,14 @@
                         @csrf                       
                         <div class="form-group">
                             <label for="exampleInputPhone1">Hall</label>
-                            <select name="hall_id" class="form-control" placeholder="{{$seat->hall_id}}">
+                            <select name="hall_id" class="form-control" >
                                 <!-- <option value=" {{ $seat->hall_id }}" place>{{$seat->hall_id}}</option> -->
                                 @foreach($halls as $hall)
                                 <option value="{{ $hall->hall_id }}" {{ $hall_selected == $hall->hall_id ? 'selected="selected"' : '' }}>{{ $hall->hall_name }}</option>         
                                 @endforeach
                             </select>
+                            <input type="hidden" class="form-control" id="exampleInputName1" name="seat_id" placeholder="Name" value="{{$seat->seat_id}}">
+                     
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail3">Seat Row</label>
@@ -32,7 +34,7 @@
                             <label for="exampleInputEmail3">Seat Number</label>
                             <select name="seat_number" class="form-control">
                                 <option hidden="hidden" value="{{$seat->seat_number}}" {{ $number_selected == $seat->seat_number ? 'selected="selected"' : '' }}>{{ $seat->seat_number }}</option>
-                                 <option value="1">1</option>
+                                <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>

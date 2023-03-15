@@ -18,6 +18,8 @@ use Session;
 class HallController extends Controller
 {
     //
+    
+
     public function index()
     {
         $halls=Hall::all();

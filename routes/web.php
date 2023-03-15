@@ -136,7 +136,7 @@ use App\Http\Controllers\SeatController;
     Route::post('/Seat_updated', [SeatController::class, 'seat_update'])
         -> name('seat.update');
 
-    Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_destroy'])
+    Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_delete'])
         ->name('seat.delete');
 
 // User Routes

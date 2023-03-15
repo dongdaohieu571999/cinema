@@ -80,7 +80,7 @@ class SeatController extends Controller
             
             else {
     
-                return redirect()->route('seat.index')->with('message', 'Seat is not updated!');
+                return redirect()->back()->with('message', 'Seat is not updated!');
     
                 }
         }        
