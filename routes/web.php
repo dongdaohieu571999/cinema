@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HallController;
 use App\Http\Controllers\SeatController;
+use App\Http\Controllers\ShowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,18 +43,23 @@ use App\Http\Controllers\SeatController;
     });
 
     // Admin Show Management
-    Route::get('/ShowManagement', function(){
-        return view('admin2.layout.informationShow');
-    }); 
+    Route::get('/ShowManagement', [ShowController::class, 'index'])
+    -> name('show.index');
 
-    Route::get('/addShow', function(){
-        return view('admin2.layout.addshow');
-    });
+Route::get('/addShow', [ShowController::class, 'show_add'])
+    -> name('show.add');
 
-    Route::get('editShow', function(){
-        return view('admin2.layout.editShow');
-    });
+Route::post('/show_added', [ShowController::class, 'show_store'])
+    -> name('show.store');
 
+Route::get('/editShow/{show_id}', [ShowController::class, 'show_edit'])
+    -> name('show.edit');
+
+Route::post('/show_updated', [ShowController::class, 'show_update'])
+    -> name('show.update');
+
+Route::get('/show_delete/{show_id}', [ShowController::class, 'show_destroy'])
+    ->name('show.delete');
     // Admin Role Management
     Route::get('/RoleManagement', [RoleController::class, 'index'])
         -> name('role.index');
@@ -136,7 +142,7 @@ use App\Http\Controllers\SeatController;
     Route::post('/Seat_updated', [SeatController::class, 'seat_update'])
         -> name('seat.update');
 
-    Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_delete'])
+    Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_destroy'])
         ->name('seat.delete');
 
 // User Routes
