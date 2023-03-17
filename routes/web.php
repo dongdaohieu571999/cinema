@@ -1,11 +1,11 @@
 <?php
 
-<<<<<<< Updated upstream
-=======
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\MovieController;
->>>>>>> Stashed changes
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HallController;
+use App\Http\Controllers\SeatController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,172 +18,140 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Default Page
 
-Route::get('/', function () {
+
+// Admin Routes
+// Admin Homepage
+Route::get('/admin', function () {
 
     return view('admin2.layout.index');
 
 });
 
-Route::get('/hello-world', function(){
+// Admin Movie Management
+Route::get('/MovieManagement', [MovieController::class, 'index'])
+    -> name('movie.index');
 
-    return view('hello-world');
+Route::get('/addMovie', [MovieController::class, 'movie_add'])
+    -> name('movie.add');
 
-});
+Route::post('/Movie_added', [MovieController::class, 'movie_store'])
+    -> name('movie.store');
 
-Route::get('/hello-world/{year}', function($year){
+Route::get('/editMovie/{m_id}', [MovieController::class, 'movie_edit'])
+    -> name('movie.edit');
 
-    echo ('Hello world, ' . $year);
+Route::post('/Movie_updated', [MovieController::class, 'movie_update'])
+    -> name('movie.update');
 
-    // return view('hello-world');
+Route::get('/Movie_delete/{m_id}', [MovieController::class, 'movie_delete'])
+    ->name('movie.delete');
 
-});
+// Admin Role Management
+Route::get('/RoleManagement', [RoleController::class, 'index'])
+    -> name('role.index');
 
-Route::get('/hello-world/{year}/{yourname?}', function($year, $yourname = null){
+Route::get('/addRole', [RoleController::class, 'role_add'])
+    -> name('role.add');
 
-    $hello_string = '';
+Route::post('/role_added', [RoleController::class, 'role_store'])
+    -> name('role.store');
 
-    if($yourname == null){
+Route::get('/editRole/{role_id}', [RoleController::class, 'role_edit'])
+    -> name('role.edit');
 
-    $hello_string = 'Hello world, ' . $year;
+Route::post('/role_updated', [RoleController::class, 'role_update'])
+    -> name('role.update');
 
-    }else{
+Route::get('/role_delete/{role_id}', [RoleController::class, 'role_destroy'])
+    ->name('role.delete');
 
-    $hello_string = 'Hello world, ' . $year . '. My name is ' . $yourname;
+// Admin User Management
 
-    }
-
-    return view('hello-world')->with('hello_str', $hello_string);
-
-    });
-
-<<<<<<< Updated upstream
-Route::get('/information', function(){
-    return view('admin2.layout.informationMovie');
-});
-
-Route::get('/addMovie', function(){
-    return view('admin2.layout.addMovie');
-});
-
-Route::get('/addrole', function(){
-    return view('admin2.layout.addrole');
-});
-
-// Route::get('/editrole/{role_id}/{role_name}', function($role_id, $role_name){
-//     $edit_role = $role_name;
-//     return view('admin2.layout.editrole')->with('edit_role',$edit_role);
-// });
-=======
-    // Admin Movie Management
-    Route::get('/MovieManagement', [MovieController::class, 'index'])
-        -> name('movie.index');
-
-    Route::get('/addMovie', [MovieController::class, 'movie_add'])
-        -> name('movie.add');
-
-    Route::post('/movie_added', [MovieController::class, 'movie_store'])
-        -> name('movie.store');
-
-    Route::get('/editMovie/{m_id}', [MovieController::class, 'movie_edit'])
-        -> name('movie.edit');
-
-    Route::post('/movie_updated', [MovieController::class, 'movie_update'])
-        -> name('movie.update');
-
-    Route::get('/movie_delete/{m_id}', [MovieController::class, 'movie_delete'])
-        ->name('movie.delete');
-
-    // Admin Show Management
-    Route::get('/ShowManagement', function(){
-        return view('admin2.layout.informationShow');
-    });
->>>>>>> Stashed changes
-
-Route::get('/editrole', function(){   
-    return view('admin2.layout.editrole');
-});
-
-Route::get('/adduser', function(){
-    return view('admin2.layout.adduser');
-});
-
-<<<<<<< Updated upstream
-Route::get('/edituser', function(){
-    return view('admin2.layout.edituser');
-});
-=======
-    // Admin Role Management
-    Route::get('/RoleManagement', [RoleController::class, 'index'])
-        -> name('role.index');
-
-    Route::get('/addRole', [RoleController::class, 'role_add'])
-        -> name('role.add');
-
-    Route::post('/role_added', [RoleController::class, 'role_store'])
-        -> name('role.store');
-
-    // Route::get('/editrole/{role_id}/{role_name}', function($role_id, $role_name){
-    //     $edit_role = $role_name;
-    //     return view('admin2.layout.editrole')->with('edit_role',$edit_role);
-    // });
-
-    Route::get('/editRole/{role_id}', [RoleController::class, 'role_edit'])
-        -> name('role.edit');
-
-    Route::post('/role_updated', [RoleController::class, 'role_update'])
-        -> name('role.update');
-
-    Route::get('/role_delete/{role_id}', [RoleController::class, 'role_destroy'])
-        ->name('role.delete');
-
-    // Admin User Management
-
-    Route::get('/addUser', [UserController::class, 'user_add'])
-        -> name('user.add');
+Route::get('/addUser', [UserController::class, 'user_add'])
+    -> name('user.add');
 
 
-    Route::get('/UserManagement', [UserController::class, 'index'])
-        -> name('user.index');
+Route::get('/UserManagement', [UserController::class, 'index'])
+    -> name('user.index');
 
-    Route::post('/user_added', [UserController::class, 'admin_user_store'])
-        -> name('admin.user.store');
+Route::post('/user_added', [UserController::class, 'admin_user_store'])
+    -> name('admin.user.store');
 
-    Route::get('/editUser/{user_id}', [UserController::class, 'admin_user_edit'])
-        -> name('admin.user.edit');
+Route::get('/editUser/{user_id}', [UserController::class, 'admin_user_edit'])
+    -> name('admin.user.edit');
 
-    Route::post('/updateUser', [UserController::class, 'admin_user_update'])
-        -> name('admin.user.update');
+Route::post('/updateUser', [UserController::class, 'admin_user_update'])
+    -> name('admin.user.update');
 
-    Route::get('/deleteUser/{user_id}', [UserController::class, 'admin_user_delete'])
-        -> name('admin.user.delete');
+Route::get('/deleteUser/{user_id}', [UserController::class, 'admin_user_delete'])
+    -> name('admin.user.delete');
 
-    // Admin Page Redirect
-    Route::get('/adHomepage', function(){
-        return view('website.layout.adHomepage');
-    })
-        ->name('adHomepage');
+// Admin Page Redirect
+Route::get('/adHomepage', function(){
+    return view('website.layout.adHomepage');
+})
+    ->name('adHomepage');
 
+
+// Admin Hall Management
+Route::get('/HallManagement', [HallController::class, 'index'])
+    -> name('hall.index');
+
+Route::get('/addHall', [HallController::class, 'hall_add'])
+    -> name('hall.add');
+
+Route::post('/Hall_added', [HallController::class, 'hall_store'])
+    -> name('hall.store');
+
+Route::get('/editHall/{hall_id}', [HallController::class, 'hall_edit'])
+    -> name('hall.edit');
+
+Route::post('/hall_updated', [HallController::class, 'hall_update'])
+    -> name('hall.update');
+
+Route::get('/hall_delete/{hall_id}', [HallController::class, 'hall_destroy'])
+    ->name('hall.delete');
+
+// Admin Seat Management
+Route::get('/SeatManagement', [SeatController::class, 'index'])
+    -> name('seat.index');
+
+Route::get('/addSeat', [SeatController::class, 'seat_add'])
+    -> name('seat.add');
+
+Route::post('/Seat_added', [SeatController::class, 'seat_store'])
+    -> name('seat.store');
+
+Route::get('/editSeat/{seat_id}', [SeatController::class, 'seat_edit'])
+    -> name('seat.edit');
+
+Route::post('/Seat_updated', [SeatController::class, 'seat_update'])
+    -> name('seat.update');
+
+Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_delete'])
+    ->name('seat.delete');
 
 // User Routes
 
-    // User Login
-    Route::get('/login', [UserController::class,'showLogin'])
-        ->name('login');
+// User Login
+Route::get('/login', [UserController::class,'showLogin'])
+    ->name('login');
 
 
-    Route::post('/login_successful', [UserController::class, 'login'])
-        ->name('auth.login');
+Route::post('/login_successful', [UserController::class, 'login'])
+    ->name('auth.login');
 
-    // User Registration
-    Route::get('/register', [UserController::class,'showRegister'])
-        ->name('register');
+// User Registration
+Route::get('/register', [UserController::class,'showRegister'])
+    ->name('register');
 
-    Route::post('/register_successful', [UserController::class, 'store'])
-        ->name('auth.register');
+Route::post('/register_successful', [UserController::class, 'store'])
+    ->name('auth.register');
 
-    Route::get('/logout', [UserController::class,'logout'])
-        ->name('logout');
+Route::get('/logout', [UserController::class,'logout'])
+    ->name('logout');
 
 // Website Routes
 
@@ -191,4 +159,3 @@ Route::get('/', function(){
     return view('website.layout.homepage');
 })
     ->name('home');
->>>>>>> Stashed changes
