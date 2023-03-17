@@ -34,9 +34,17 @@
                 </div>
                 <div class="form-group row">
                     <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Genre</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" name="genre" id="exampleInputConfirmPassword2" placeholder="Category of movie">
-                    </div>
+                    <select name="genre" class="form-control" id="exampleInputPassword2">                            
+                            <option value="Action">Action</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Action">Action</option>
+                            <option value="Fantasy & Fiction">Action</option>
+                            <option value="Horror">Comedy</option>
+                            <option value="Mystery">Drama</option>
+                            <option value="Romance">Action</option>
+                            <option value="Thriller">Action</option>
+                    </select>
                 </div>
                 <div class="form-group row">
                     <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Premiere</label>
