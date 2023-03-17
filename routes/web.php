@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HallController;
 use App\Http\Controllers\SeatController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -138,6 +139,25 @@ use App\Http\Controllers\SeatController;
 
     Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_delete'])
         ->name('seat.delete');
+
+    // Admin Movie Management
+    Route::get('/MovieManagement', [MovieController::class, 'index'])
+        -> name('movie.index');
+
+    Route::get('/addMovie', [MovieController::class, 'movie_add'])
+        -> name('movie.add');
+
+    Route::post('/Movie_added', [MovieController::class, 'movie_store'])
+        -> name('movie.store');
+
+    Route::get('/editMovie/{m_id}', [MovieController::class, 'movie_edit'])
+        -> name('movie.edit');
+
+    Route::post('/Movie_updated', [MovieController::class, 'movie_update'])
+        -> name('movie.update');
+
+    Route::get('/Movie_delete/{m_id}', [MovieController::class, 'movie_delete'])
+        ->name('movie.delete');
 
 // User Routes
 
