@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Show;
 use App\Models\Hall;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers;
@@ -29,13 +30,15 @@ class ShowController extends Controller
     public function show_add()
     {
         $halls=Hall::all();
-        return view('admin2.layout.Show.addshow', ['halls' => $halls]);
+        $movies=Movie::all();
+        return view('admin2.layout.Show.addshow', ['halls' => $halls, 'movies' => $movies]);
     }
 
     public function show_store(Request $request)
     {
         if ($request->isMethod('POST')){
             $newShow = new Show();
+            $newShow->show_id = $request->show_id;
             $newShow->m_id = $request->m_id;
             $newShow->hall_id = $request->hall_id;
             $newShow->stt_time = $request->stt_time;
@@ -50,8 +53,10 @@ class ShowController extends Controller
     public function show_edit($show_id)
     {
         $halls = Hall::all();
-        $show = Show::with('hallid') -> find($show_id);
-        return view('admin2.layout.Show.editShow', compact('hall_selected'), ['show' => $show, 'halls' => $halls]);
+        $movies = Movie::all();
+        $show = Show::find($show_id);
+
+        return view('admin2.layout.Show.editShow', ['show' => $show, 'halls' => $halls , 'movies'=>$movies]);
     }
 
     public function show_update(Request $request)

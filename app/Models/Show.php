@@ -21,6 +21,9 @@ class Show extends Model
     public function hallid() {
         return $this->belongsTo('App\Models\Hall','hall_id');
     }
+    public function mid() {
+        return $this->belongsTo('App\Models\Movie','m_id');
+    }
 
 
 }

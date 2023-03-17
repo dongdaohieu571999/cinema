@@ -23,7 +23,8 @@
                     <tbody>
                         @foreach($shows as $show)
                         <tr>
-                            <td>{{ $show->m_id}} </td>
+                            <td>{{ $show->show_id }}
+                            <td>{{ $show->mid->name}} </td>
                             <td>{{ $show->hallid->hall_name }}</td>
                             <td>{{ $show->stt_time}} </td>
                             <td>{{ $show->end_time}} </td>
