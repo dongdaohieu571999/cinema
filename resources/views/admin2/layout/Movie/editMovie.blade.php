@@ -58,6 +58,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Trailer</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="trailer" id="exampleInputConfirmPassword2" placeholder="Movie Trailer">
+                    </div>
+</div>
+                <div class="form-group row">
                     <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Movie banner</label>
                     <div class="col-sm-9">
                     <div><img src="{{ asset('AdminCSS/Movie_Banner/'.$movie->movie_banner) }}" alt="" height=200 width=200></div>
@@ -74,13 +80,21 @@
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="status" id="membershipRadios1" value="Now Showing" checked=""> Now Showing <i class="input-helper"></i></label>
                               </div>
-                            </div>
-                            <div class="col-sm-5">
                               <div class="form-check">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="status" id="membershipRadios2" value="Coming Soon"> Coming Soon <i class="input-helper"></i></label>
                               </div>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="status" id="membershipRadios2" value="Not Available"> Not Available <i class="input-helper"></i></label>
+                              </div>
                             </div>
+                            <!-- <div class="col-sm-5">
+                              
+                            </div>
+                            <div class="col-sm-4">
+                              
+                            </div> -->
                           </div>
                 </div>
 

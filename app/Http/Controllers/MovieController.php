@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\File;
 class MovieController extends Controller
 {
     // 
+    
+    //Admin Movie Management Index
     public function index()
     {
         $movies=Movie::all();
@@ -28,6 +30,38 @@ class MovieController extends Controller
 
     }
 
+    // User Homepage Movie 
+    public function index_user_nowshowing()
+    {
+        $nowshowing_movies=Movie::where('status','LIKE','%'.'Now Showing'.'%')
+        ->get();
+        $comingsoon_movies=Movie::where('status','LIKE','%'.'Coming Soon'.'%')
+        ->get();
+        return view('website.layout.homepage', compact('nowshowing_movies','comingsoon_movies'));
+    }
+
+    // Admin Homepage Movie
+    public function index_admin_nowshowing()
+    {
+        $nowshowing_movies=Movie::where('status','LIKE','%'.'Now Showing'.'%')
+        ->get();
+        $comingsoon_movies=Movie::where('status','LIKE','%'.'Coming Soon'.'%')
+        ->get();
+        return view('website.layout.adHomepage', compact('nowshowing_movies','comingsoon_movies'));
+    }
+
+    // User Movie Detail
+    public function movie_detail($m_id)
+    {        
+        $selected_movie = Movie::find($m_id);
+        $nowshowing_movies=Movie::where('status','LIKE','%'.'Now Showing'.'%')
+        ->get();
+        return view('website.layout.Movie.MovieDetail',compact('nowshowing_movies'), ['selected_movie' => $selected_movie]);
+        
+    }
+
+
+    // Admin Movie Add
     public function movie_add()
     {
         return view('admin2.layout.Movie.addMovie');
@@ -97,6 +131,8 @@ class MovieController extends Controller
 
             $newMovie->language = $request->language;
 
+            $newMovie->trailer = $request->trailer;
+
             $newMovie->movie_banner = $fileName;
 
             $newMovie->status = $request->status;
@@ -117,6 +153,7 @@ class MovieController extends Controller
 
     }
 
+    // Admin Movie Edit
     public function movie_edit($m_id)
     {
         $movie = Movie::find($m_id);
@@ -161,6 +198,8 @@ class MovieController extends Controller
 
                 $movie->language = $request->language;
 
+                $movie->trailer = $request->trailer;
+
                 if($fileName){
                     $movie->movie_banner = $fileName;
                 }
@@ -182,6 +221,7 @@ class MovieController extends Controller
 
     }
     
+    // Admin Movie Delete
     public function movie_delete($m_id)
 
     {

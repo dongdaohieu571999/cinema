@@ -50,32 +50,41 @@
                         <input type="text" class="form-control" name="duration" id="exampleInputConfirmPassword2" placeholder="Movie Length in minute">
                     </div>
                 </div>
+                
                 <div class="form-group row">
                     <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Language</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" name="language" id="exampleInputConfirmPassword2" placeholder="Language of Movie">
                     </div>
                 </div>
+               
                 <div class="form-group row">
                     <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Movie banner</label>
                     <div class="col-sm-9">
                         <input type="file" class="form-control" name="movie_banner" id="exampleInputConfirmPassword2" >
                     </div>
                 </div>
-                
+                <div class="form-group row">
+                    <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Trailer</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="trailer" id="exampleInputConfirmPassword2" placeholder="Movie Trailer">
+                    </div>
+                </div>
                 <div class="col-md-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Status</label>
                             <div class="col-sm-4">
-                              <div class="form-check">
+                            <div class="form-check">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="status" id="membershipRadios1" value="Now Showing" checked=""> Now Showing <i class="input-helper"></i></label>
                               </div>
-                            </div>
-                            <div class="col-sm-5">
                               <div class="form-check">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="status" id="membershipRadios2" value="Coming Soon"> Coming Soon <i class="input-helper"></i></label>
+                              </div>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="status" id="membershipRadios2" value="Not Available"> Not Available <i class="input-helper"></i></label>
                               </div>
                             </div>
                           </div>

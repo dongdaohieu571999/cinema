@@ -89,21 +89,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 
-<link href="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/library.meanmenu.css" rel="stylesheet" />
+<link href="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/library.meanmenu.css') }}" rel="stylesheet" />
 
-<link href="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/jquery.bxslider.css" rel="stylesheet" />
-<link href="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/style.css" rel="stylesheet" />
-<link href="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/smart.css" rel="stylesheet" />
+<link href="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/jquery.bxslider.css') }}" rel="stylesheet" />
+<link href="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/style.css') }}" rel="stylesheet" />
+<link href="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/smart.css') }}" rel="stylesheet" />
 
-<script src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/jquery.js"></script>
-<script src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/jquery.meanmenu.js"></script>
-<script src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/slick.min.js"></script>
+<script src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/jquery.js') }}"></script>
+<script src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/jquery.meanmenu.js') }}"></script>
+<script src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/slick.min.js') }}"></script>
 <div class="header header_home">
     
 
     
 <div class="inner">
-    <a href="/" class="f-left"><img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/logo_home.png" alt="" style="width:100px;height:100px"></a>
+    <a href="/" class="f-left"><img src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/logo_home.png') }}" alt="" style="width:100px;height:100px"></a>
     
     
     <div class="right">
@@ -125,11 +125,11 @@
 
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js') }}"></script>
 
 
-<script src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/jquery.js"></script>
-<script src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/jquery.meanmenu.js"></script>
+<script src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/jquery.js') }}"></script>
+<script src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/js/jquery.meanmenu.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
@@ -149,7 +149,7 @@
     
 </ul>
         <div class="button_mua button_mua_home">
-            <a href="/PlanScreenings/Sessiontimes"><img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/ticket.png" alt=""> TICKET BOOKING </a>
+            <a href="/PlanScreenings/Sessiontimes"><img src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/ticket.png') }}" alt=""> TICKET BOOKING </a>
         </div>
     <input  type="hidden" id="hidden-cutomerid" value="0"/>
 

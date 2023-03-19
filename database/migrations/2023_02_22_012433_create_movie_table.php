@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('language');
             $table->string('movie_banner');
             $table->string('status');
+            $table->string('trailer');
             $table->timestamps();
             
         });

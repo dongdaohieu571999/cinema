@@ -2,7 +2,7 @@
     <div class="fott">
     <div class="inner">
         <p id="pageTop">
-            <a href="#"><img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/icon-top.png" alt=""></a>
+            <a href="#"><img src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/icon-top.png') }}" alt=""></a>
         </p>
         <ul>
             <li><a href="/t/chinhsachmuave" class="active">Policy</a></li>
@@ -37,14 +37,14 @@
                     <div class="clear"></div>
             </div>
         <div class="down">
-            <a href="#"><img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img24.png" alt=""></a>
-            <a href="#"><img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img25.png" alt=""></a>
+            <a href="#"><img src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img24.png') }}" alt=""></a>
+            <a href="#"><img src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img25.png') }}" alt=""></a>
         </div>
         
         <div class="link">
-            <a href="#"><img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img26.png" alt=""></a>
-            <a href="https://www.facebook.com/chieuphimquocgiavn/"><img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img27.png" alt=""></a>
-            <a href="#"><img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img28.png" alt=""></a>
+            <a href="#"><img src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img26.png') }}" alt=""></a>
+            <a href="https://www.facebook.com/chieuphimquocgiavn/"><img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img27.png') }}" alt=""></a>
+            <a href="#"><img src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img28.png') }}" alt=""></a>
 
         </div>
     </div>
@@ -53,7 +53,7 @@
 
 
     
-    <script type="text/javascript" src="WebsiteCSS/XScripts/public.footer.js"></script>
+    <script type="text/javascript" src="{{ asset('WebsiteCSS/XScripts/public.footer.js') }}"></script>
 
 
 

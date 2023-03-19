@@ -200,7 +200,12 @@ use App\Http\Controllers\MovieController;
 
 // Website Routes
 
-Route::get('/', function(){
-    return view('website.layout.homepage');
-})
-    ->name('home');
+Route::get('/', [MovieController::class, 'index_user_nowshowing'])
+    -> name('movie.indexUser');
+
+Route::get('/adHomepage', [MovieController::class, 'index_admin_nowshowing'])
+    -> name('movie.indexAdmin');
+
+Route::get('/moviedetail/{m_id}', [MovieController::class, 'movie_detail'])
+    -> name('movie.detail');
+        

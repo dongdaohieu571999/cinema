@@ -25,7 +25,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('adHomepage')}}">
+              <a class="nav-link" href="{{route('movie.indexAdmin')}}">
                 <span class="menu-title">Return to Customer Page</span>
                 <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
