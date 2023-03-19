@@ -336,15 +336,15 @@
 </div>
 <div class="block-movie container-fluid container-fluid2">
     <div class="form_check_slider">
-    <div class="t_tab1" id="tab1">
+        <div class="t_tab1" id="tab1">
             <ul>
                 @foreach ($nowshowing_movies as $movie)
                 <li class="last" style="width:294px ; height:437px">
-                    <a href="/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926" title="caption">
+                    <a href="{{ route('movie.detail', $movie->m_id) }}" title="caption">
                         <img src="{{ asset('AdminCSS/Movie_Banner/'.$movie->movie_banner) }}" alt="" style="width:294px ; height:437px" title="">
                     </a>
-                    <div class="movie_hover" onclick="location.href='/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926'">
-                        <p href="/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926" class="tx_black">{{ $movie->name }}</p>
+                    <div class="movie_hover" onclick="location.href='{{ route('movie.detail', $movie->m_id) }}'">
+                        <p href="{{ route('movie.detail', $movie->m_id) }}" class="tx_black">{{ $movie->name }}</p>
                         <p class="font_light">
                             Genres: {{ $movie->genre }}<br>
                             
@@ -360,11 +360,11 @@
             <ul>
                 @foreach ($comingsoon_movies as $movie)
                 <li class="last" style="width:294px ; height:437px">
-                    <a href="/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926" title="caption">
+                    <a href="{{ route('movie.detail', $movie->m_id) }}" title="caption">
                         <img src="{{ asset('AdminCSS/Movie_Banner/'.$movie->movie_banner) }}" alt="" style="width:294px ; height:437px" title="">
                     </a>
-                    <div class="movie_hover" onclick="location.href='/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926'">
-                        <p href="/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926" class="tx_black">{{ $movie->name }}</p>
+                    <div class="movie_hover" onclick="location.href='{{ route('movie.detail', $movie->m_id) }}'">
+                        <p href="{{ route('movie.detail', $movie->m_id) }}" class="tx_black">{{ $movie->name }}</p>
                         <p class="font_light">
                             Genres: {{ $movie->genre }}<br>
                             
@@ -377,7 +377,6 @@
             </ul>
         </div>
     </div>
-        
     </div>
 
             <div class="menu-tab">

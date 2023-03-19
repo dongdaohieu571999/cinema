@@ -1,10 +1,6 @@
-@INCLUDE('website.layout.head')
+@extends('website.layout.index')
 
-@if(session()->has('user'))
-    @INCLUDE('website.layout.navbar-admin-log')
-@else
-    @INCLUDE('website.layout.navbar-unlog')
-@endif
+@section('content')
 
 <div id="wrapper">
     <div class="content">
@@ -175,4 +171,4 @@
     </div>
 </div>
 
-@INCLUDE('website.layout.footer')
+@endsection
