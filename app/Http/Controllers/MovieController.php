@@ -161,8 +161,9 @@ class MovieController extends Controller
 
                 $movie->language = $request->language;
 
-                $movie->movie_banner = $fileName;
-
+                if($fileName){
+                    $movie->movie_banner = $fileName;
+                }
                 $movie->status = $request->status;
 
                 $movie->save();              

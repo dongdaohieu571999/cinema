@@ -8,13 +8,12 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Cinemax.svg/2560px-Cinemax.svg.png" alt="">
+                  <img src="{{url('/')}}/UserCSS/Users_Avatar/{{Auth::user()->avatar}}" alt="">
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">Group 2</span>
-                  <span class="text-secondary text-small">Project Manager</span>
+                  <span class="font-weight-bold mb-2"> {{session('user')}}</span>
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
@@ -62,11 +61,27 @@
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="/SeatManagement">
                 <span class="menu-title">Seat Management</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">Seat Management</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="/SeatManagement">All Hall</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Hall1_SeatManagement">Hall 1</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Hall2_SeatManagement">Hall 2</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Hall3_SeatManagement">Hall 3</a></li>
+
+                </ul>
+              </div>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="pages/charts/chartjs.html">

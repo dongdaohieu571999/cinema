@@ -42,13 +42,13 @@
                 <div class="form-group row">
                     <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Premiere</label>
                     <div class="col-sm-9">
-                        <input type="datetime-local" class="form-control" name="premiere" id="exampleInputConfirmPassword2" value="{{ $movie->premiere }}">
+                        <input type="date" class="form-control" name="premiere" id="exampleInputConfirmPassword2" value="{{ $movie->premiere }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Duration</label>
                     <div class="col-sm-9">
-                        <input type="time" class="form-control" name="duration" id="exampleInputConfirmPassword2" value="{{ $movie->duration }}">
+                        <input type="text" class="form-control" name="duration" id="exampleInputConfirmPassword2" value="{{ $movie->duration }}">
                     </div>
                 </div>
                 <div class="form-group row">

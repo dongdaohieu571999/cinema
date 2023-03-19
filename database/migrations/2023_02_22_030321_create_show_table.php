@@ -19,8 +19,7 @@ return new class extends Migration
             $table ->foreign('m_id')->references('m_id')->on('movie');
             $table->integer('hall_id')->unsigned(); 
             $table ->foreign('hall_id')->references('hall_id')->on('hall');
-            $table->string('stt_time');
-            $table->string('end_time');
+            $table->string('stt_time');   
             $table->string('showdate');
             $table->timestamps();
         });

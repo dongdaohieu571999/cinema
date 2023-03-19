@@ -28,16 +28,16 @@
                     <tbody>
                     @foreach ($movies as $movie)
                     <tr>
-                        <td>{{ $movie->m_id }}</td>
+                        <td>M{{ $movie->m_id }}</td>
                         <td>{{ $movie->name }}</td>
                         <td>{{ $movie->description }}</td>
                         <td>{{ $movie->director }}</td>
                         <td>{{ $movie->actors }}</td>
                         <td>{{ $movie->genre }}</td>
                         <td>{{ $movie->premiere }}</td>
-                        <td>{{ $movie->duration }}</td>
+                        <td>{{ $movie->duration }}m</td>
                         <td>{{ $movie->language }}</td>
-                        <td><img src="{{ asset('AdminCSS/Movie_Banner/'.$movie->movie_banner) }}" alt="" border= height=300 width=400></td></td>
+                        <td><img src="{{ asset('AdminCSS/Movie_Banner/'.$movie->movie_banner) }}" alt="" id="movie_banner"></td></td>
                         <td>{{ $movie->status }}</td>
                         <td>
                             <a href="{{ route('movie.edit', $movie->m_id) }}"><button type="submit" class="btn btn-gradient-primary mr-2">Edit</button></a>

@@ -19,7 +19,7 @@
                     <tbody>
                     @foreach($halls as $hall)
                     <tr>
-                        <td>{{ $hall->hall_id}} </td>
+                        <td>H{{ $hall->hall_id}} </td>
                         <td>{{ $hall->hall_name }}</td>
                         <td> 
                             <a href="{{route('hall.edit', $hall->hall_id)}}"><button type="submit" class="btn btn-gradient-primary mr-2">Edit</button></a>

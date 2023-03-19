@@ -13627,10 +13627,15 @@ dl {
     /* white-space: nowrap; */
     padding: 0.9375rem; }
     .table th img,
-    .table td img {
+    .table td img{
       width: 36px;
       height: 36px;
       border-radius: 100%; }
+    #movie_banner{
+      width: 100px;
+      height: 155px;
+      border-radius: 0%;
+    }  
     .table th .badge,
     .table td .badge {
       margin-bottom: 0; }
