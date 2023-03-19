@@ -23,12 +23,12 @@
                     <tbody>
                         @foreach ($users as $user) 
                         <tr>
-                            <td> {{ $user->user_id}} </td>
+                            <td> U{{ $user->user_id}} </td>
                             <td> {{ $user->email}} </td>
                             <td> {{ $user->full_name}} </td>                            
                             <td> 0{{ $user->phone}} </td>
                             <td> {{ $user->roleid->role_name}} </td>  
-                            <td><img src="{{ asset('UserCSS/Users_Avatar/'.$user->avatar) }}" alt="" border= height=300 width=400></td>
+                            <td><img src="{{ asset('UserCSS/Users_Avatar/'.$user->avatar) }}" alt="" class="user_avatar"></td>
                             <td> 
                                 <a href="{{ route('admin.user.edit', $user->user_id) }}"><button type="submit" class="btn btn-gradient-primary mr-2">Edit</button></a>
                                 <a href="{{ route('admin.user.delete', $user->user_id) }}" onclick="return confirm('Are you sure you want to delete this item?');"><button class="btn btn-light">Delete</button></a>

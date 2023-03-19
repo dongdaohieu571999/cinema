@@ -24,8 +24,7 @@ return new class extends Migration
             $table->string('premiere');
             $table->string('language');
             $table->string('movie_banner');
-            $table->boolean('now_playing');
-            $table->boolean('coming_soon');
+            $table->string('status');
             $table->timestamps();
             
         });

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Show extends Model
 {
     use HasFactory;
+
     protected $table = 'show';
     protected $primaryKey = 'show_id';
     public $timestamps = false;    
@@ -15,7 +16,6 @@ class Show extends Model
         'm_id',
         'hall_id', 
         'stt_time', 
-        'end_time', 
         'showdate', 
     ];
     public function hallid() {
@@ -24,6 +24,7 @@ class Show extends Model
     public function mid() {
         return $this->belongsTo('App\Models\Movie','m_id');
     }
+
 
 
 }

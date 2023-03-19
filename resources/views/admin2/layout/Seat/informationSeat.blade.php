@@ -21,7 +21,7 @@
                     <tbody>
                     @foreach($seats as $seat)
                     <tr>
-                        <td>{{ $seat->seat_id}} </td>
+                        <td>SE{{ $seat->seat_id}} </td>
                         <td>{{ $seat->hallid->hall_name }}</td>
                         <td>{{ $seat->seat_row}} </td>
                         <td>{{ $seat->seat_number }}</td>

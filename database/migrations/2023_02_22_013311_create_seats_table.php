@@ -19,7 +19,7 @@ return new class extends Migration
             $table ->foreign('hall_id')->references('hall_id')->on('hall');
             $table->string('seat_row');
             $table->string('seat_number');
-            $table->boolean('isEmpty');
+            $table->boolean('isEmpty')->nullable();
             $table->timestamps();
         });
     }

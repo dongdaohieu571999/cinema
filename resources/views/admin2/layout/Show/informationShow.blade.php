@@ -14,8 +14,7 @@
                         <th> # </th>
                         <th> Movie Name </th>
                         <th> Hall ID </th>
-                        <th> Start Time </th>
-                        <th> End Time </th>                        
+                        <th> Start Time </th>                    
                         <th> Show Date </th>
                         <th> Action </th>
                     </tr>
@@ -23,11 +22,10 @@
                     <tbody>
                         @foreach($shows as $show)
                         <tr>
-                            <td>{{ $show->show_id }}
+                            <td>S{{ $show->show_id }}
                             <td>{{ $show->mid->name}} </td>
                             <td>{{ $show->hallid->hall_name }}</td>
                             <td>{{ $show->stt_time}} </td>
-                            <td>{{ $show->end_time}} </td>
                             <td>{{ $show->showdate}}</td>
                             <td> 
                                 <a href="{{route('show.edit', $show->show_id)}}"><button type="submit" class="btn btn-gradient-primary mr-2">Edit</button></a>

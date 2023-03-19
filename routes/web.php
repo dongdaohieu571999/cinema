@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HallController;
 use App\Http\Controllers\SeatController;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ use App\Http\Controllers\ShowController;
 
 
 // Admin Routes
+    // Admin Login
+
+    
     // Admin Homepage
     Route::get('/admin', function () {
 
@@ -46,20 +50,21 @@ use App\Http\Controllers\ShowController;
     Route::get('/ShowManagement', [ShowController::class, 'index'])
     -> name('show.index');
 
-Route::get('/addShow', [ShowController::class, 'show_add'])
-    -> name('show.add');
+    Route::get('/addShow', [ShowController::class, 'show_add'])
+        -> name('show.add');
 
-Route::post('/show_added', [ShowController::class, 'show_store'])
-    -> name('show.store');
+    Route::post('/show_added', [ShowController::class, 'show_store'])
+        -> name('show.store');
 
-Route::get('/editShow/{show_id}', [ShowController::class, 'show_edit'])
-    -> name('show.edit');
+    Route::get('/editShow/{show_id}', [ShowController::class, 'show_edit'])
+        -> name('show.edit');
 
-Route::post('/show_updated', [ShowController::class, 'show_update'])
-    -> name('show.update');
+    Route::post('/show_updated', [ShowController::class, 'show_update'])
+        -> name('show.update');
 
-Route::get('/show_delete/{show_id}', [ShowController::class, 'show_destroy'])
-    ->name('show.delete');
+    Route::get('/show_delete/{show_id}', [ShowController::class, 'show_destroy'])
+        ->name('show.delete');
+
     // Admin Role Management
     Route::get('/RoleManagement', [RoleController::class, 'index'])
         -> name('role.index');
@@ -129,6 +134,15 @@ Route::get('/show_delete/{show_id}', [ShowController::class, 'show_destroy'])
     // Admin Seat Management
     Route::get('/SeatManagement', [SeatController::class, 'index'])
         -> name('seat.index');
+    
+    Route::get('/Hall1_SeatManagement', [SeatController::class, 'index_hall1'])
+        -> name('seat.hall1.index');
+
+    Route::get('/Hall2_SeatManagement', [SeatController::class, 'index_hall2'])
+        -> name('seat.hall2.index');
+
+    Route::get('/Hall3_SeatManagement', [SeatController::class, 'index_hall3'])
+        -> name('seat.hall3.index');
 
     Route::get('/addSeat', [SeatController::class, 'seat_add'])
         -> name('seat.add');
@@ -144,6 +158,25 @@ Route::get('/show_delete/{show_id}', [ShowController::class, 'show_destroy'])
 
     Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_destroy'])
         ->name('seat.delete');
+
+    // Admin Movie Management
+    Route::get('/MovieManagement', [MovieController::class, 'index'])
+        -> name('movie.index');
+
+    Route::get('/addMovie', [MovieController::class, 'movie_add'])
+        -> name('movie.add');
+
+    Route::post('/Movie_added', [MovieController::class, 'movie_store'])
+        -> name('movie.store');
+
+    Route::get('/editMovie/{m_id}', [MovieController::class, 'movie_edit'])
+        -> name('movie.edit');
+
+    Route::post('/Movie_updated', [MovieController::class, 'movie_update'])
+        -> name('movie.update');
+
+    Route::get('/Movie_delete/{m_id}', [MovieController::class, 'movie_delete'])
+        ->name('movie.delete');
 
 // User Routes
 

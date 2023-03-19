@@ -27,11 +27,7 @@
                     <div class="form-group">
                         <label for="stt_time"> Start Time </label>
                         <input class="form-control" type="time" id="stt_time" name="stt_time">
-                    </div>
-                    <div class="form-group">
-                        <label for="end_time"> End Time </label>
-                        <input class="form-control" type="time" id="end_time" name="end_time" required>
-                    </div>
+                    </div>                    
                     <div class="form-group">
                         <label for="showdate">Show Date </label>
                         <input class="form-control" type="date" id="showdate" name="showdate">

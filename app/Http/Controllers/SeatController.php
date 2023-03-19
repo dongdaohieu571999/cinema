@@ -25,6 +25,30 @@ class SeatController extends Controller
 
     }
 
+    public function index_hall1()
+    {
+        $seats=Seat::where('hall_id','LIKE','1')
+        ->get();
+        return view('admin2.layout.Seat.informationSeat', compact('seats'));
+
+    }
+
+    public function index_hall2()
+    {
+        $seats=Seat::where('hall_id','LIKE','2')
+        ->get();
+        return view('admin2.layout.Seat.informationSeat', compact('seats'));
+
+    }
+
+    public function index_hall3()
+    {
+        $seats=Seat::where('hall_id','LIKE','3')
+        ->get();
+        return view('admin2.layout.Seat.informationSeat', compact('seats'));
+
+    }
+
     public function seat_add()
     {
         $halls=Hall::all();

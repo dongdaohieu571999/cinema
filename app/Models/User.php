@@ -49,4 +49,11 @@ class User extends Authenticatable
     public function roleid() {
         return $this->belongsTo('App\Models\Role','role_id');
     }
+    
+    public function avatar()
+    {
+        return $this->hasOne(User::class,'user_id','avatar');
+    }
+
+    
 }

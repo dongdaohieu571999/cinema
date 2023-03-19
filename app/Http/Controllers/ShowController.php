@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Show;
 use App\Models\Hall;
 use App\Models\Movie;
@@ -42,7 +43,6 @@ class ShowController extends Controller
             $newShow->m_id = $request->m_id;
             $newShow->hall_id = $request->hall_id;
             $newShow->stt_time = $request->stt_time;
-            $newShow->end_time = $request->end_time;
             $newShow->showdate = $request->showdate;
             $newShow->save();
             return redirect() -> route('show.index')
@@ -68,7 +68,6 @@ class ShowController extends Controller
                 $show->m_id = $request->m_id;
                 $show->hall_id = $request->hall_id;
                 $show->stt_time = $request->stt_time;
-                $show->end_time = $request->end_time;
                 $show->showdate = $request->showdate;
                 $show->save();   
                 return redirect() ->route('show.index')
@@ -90,3 +89,4 @@ class ShowController extends Controller
         ->with('success', 'Show is deleted successfully');
     }
 }  
+
