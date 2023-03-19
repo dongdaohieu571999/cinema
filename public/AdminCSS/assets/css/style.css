@@ -2556,8 +2556,9 @@ progress {
   .col-sm-4 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: 33.33333%; }
+    flex: 0 0 auto; 
+    padding-left: 26%;
+    width: 50.33333333%; }
   .col-sm-5 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;

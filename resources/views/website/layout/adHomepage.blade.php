@@ -170,49 +170,6 @@
 </script>
 
 
-<img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img59.png" alt="" class="img-star hide-sp">
-<div class="muave bot_block red_buy_bor hide-sp">
-    <div class="title buy_red">TICKET BOOKING</div>
-    <div class="phim bor_black">
-<select id="Films" name="Films"><option value="">--Movie Select--</option>
-<option value="9969">PHƯỢNG CH&#193;Y ( V&#201; MIỄN PH&#205;- C13)</option>
-<option value="9968">CƠN GI&#212;NG ( V&#201; MIỄN PH&#205;- C16)</option>
-<option value="9967">CH&#217;M PHIM HOẠT H&#204;NH VIỆT NAM ( V&#201; MIỄN PH&#205;- P)</option>
-<option value="9966">B&#204;NH MINH ĐỎ ( V&#201; MIỄN PH&#205;- C13)</option>
-<option value="9953">TH&#193;NH VẬT CỦA QUỶ- C18</option>
-<option value="9954">MẤT T&#205;CH- C16</option>
-<option value="9955">GI&#193;O SĨ QODRAT- C18</option>
-<option value="9974">L&#218;C Đ&#211; T&#212;I Đ&#195; CHUYỂN SINH TH&#192;NH SLIME: M&#212;́I LI&#202;N K&#202;́T ĐỎ THẪM- C13</option>
-<option value="9975">C&#218; M&#193;Y CHẾT CƯỜI- C16</option>
-<option value="9970">NH&#192; TI&#202;N TRI ( V&#201; MIẾN PH&#205;- P)</option>
-<option value="9951">Đ&#192;M PH&#193;N- C16</option>
-<option value="9952">LẠC V&#192; T&#204;M- C16</option>
-<option value="9949">B&#201; TI&#202;N RẮC RỐI- P</option>
-<option value="9925">NGƯỜI KIẾN V&#192; CHIẾN  BINH ONG 2D/C13: Thế giới lượng tử</option>
-<option value="9950">NGƯỜI KIẾN V&#192; CHIẾN BINH ONG 3D/C13: THẾ GIỚI LƯỢNG TỬ- C13</option>
-<option value="9943">TITANIC ( C16 - 3D)</option>
-<option value="9945">MUỐN GẶP ANH- C16</option>
-<option value="9913">M&#200;O B&#201;O SI&#202;U ĐẲNG- P ( lồng tiếng )</option>
-<option value="9914">X&#193;C ƯỚP ( lồng tiếng): CUỘC PHI&#202;U LƯU ĐẾN LONDON- P</option>
-<option value="9886">CHỊ CHỊ EM EM 2- C18</option>
-<option value="9887">NH&#192; B&#192; NỮ- C16</option>
-<option value="9774">AVATAR 2 - 3D, PHỤ ĐỀ: D&#210;NG CHẢY CỦA NƯỚC-C13</option>
-</select>
-    </div>
-    <div class="ngay bor_black">
-        <select id="Date" name="Date"><option value="">--Day Select--</option>
-</select>
-    </div>
-    <div class="suat bor_black">
-        <select id="Plan" name="Plan"><option value="">--Show Select--</option>
-</select>
-    </div>
-    <button class="bg_buy_red" id="Buy">Checkout</button>
-</div>
-
-<img src="WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img29.png" alt="" class="img-star hide-sp">
-
-
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" style="width:750px;margin:0 auto">
@@ -379,10 +336,45 @@
 </div>
 <div class="block-movie container-fluid container-fluid2">
     <div class="form_check_slider">
-        <div class="t_tab1" id="tab1">
-
+    <div class="t_tab1" id="tab1">
+            <ul>
+                @foreach ($nowshowing_movies as $movie)
+                <li class="last" style="width:294px ; height:437px">
+                    <a href="/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926" title="caption">
+                        <img src="{{ asset('AdminCSS/Movie_Banner/'.$movie->movie_banner) }}" alt="" style="width:294px ; height:437px" title="">
+                    </a>
+                    <div class="movie_hover" onclick="location.href='/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926'">
+                        <p href="/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926" class="tx_black">{{ $movie->name }}</p>
+                        <p class="font_light">
+                            Genres: {{ $movie->genre }}<br>
+                            
+                            Premiere: {{ $movie->premiere }}
+                        </p>
+                        <a href="/PlanScreenings/Sessiontimes?filmId=9926" class="btn-datve">TICKET BOOKING</a>
+                    </div>
+                </li>
+                @endforeach
+            </ul>
         </div>
         <div class="t_tab2" id="tab2">
+            <ul>
+                @foreach ($comingsoon_movies as $movie)
+                <li class="last" style="width:294px ; height:437px">
+                    <a href="/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926" title="caption">
+                        <img src="{{ asset('AdminCSS/Movie_Banner/'.$movie->movie_banner) }}" alt="" style="width:294px ; height:437px" title="">
+                    </a>
+                    <div class="movie_hover" onclick="location.href='/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926'">
+                        <p href="/shazam!-con-thinh-no-cua-cac-vi-than--c13-chi-tiet-film-9926" class="tx_black">{{ $movie->name }}</p>
+                        <p class="font_light">
+                            Genres: {{ $movie->genre }}<br>
+                            
+                            Premiere: {{ $movie->premiere }}
+                        </p>
+                        <a href="/PlanScreenings/Sessiontimes?filmId=9926" class="btn-datve">TICKET BOOKING</a>
+                    </div>
+                </li>
+                @endforeach
+            </ul>
         </div>
     </div>
         

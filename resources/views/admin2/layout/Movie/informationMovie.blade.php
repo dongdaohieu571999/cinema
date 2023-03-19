@@ -20,7 +20,8 @@
                         <th> Premiere </th>
                         <th> Duration </th>
                         <th> Language </th>
-                        <th> Movie Banner </th>
+                        <th> Movie Trailer </th>
+                        <th> Movie Banner </th>                        
                         <th> Status </th>
                         <th> Action </th>
                     </tr>
@@ -37,6 +38,7 @@
                         <td>{{ $movie->premiere }}</td>
                         <td>{{ $movie->duration }}m</td>
                         <td>{{ $movie->language }}</td>
+                        <td><iframe width="56" height="31" src="https://www.youtube.com/embed/{{ $movie->trailer }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
                         <td><img src="{{ asset('AdminCSS/Movie_Banner/'.$movie->movie_banner) }}" alt="" id="movie_banner"></td></td>
                         <td>{{ $movie->status }}</td>
                         <td>
