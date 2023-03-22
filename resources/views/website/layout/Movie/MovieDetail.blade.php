@@ -85,7 +85,7 @@
 
                         <div role="tabpanel" class="tab-pane" id="other1">
                             <br></br>
-                        <div><center><iframe width="504" align="center" height="283" src="https://www.youtube.com/embed/{{$selected_movie->trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center></div>
+                        <div><center><iframe width="756" align="center" height="424" src="https://www.youtube.com/embed/{{$selected_movie->trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center></div>
                             <br></br>
                         </div>
 
