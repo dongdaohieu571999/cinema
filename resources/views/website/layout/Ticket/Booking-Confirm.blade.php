@@ -15,19 +15,19 @@
                 <div class="title_capnhattin">
                     <ul class="capnhattin hide-sp">
                         <li class="tin1">
-                            <a href="#" class="tin1"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin1.png" alt=""></a>
+                            <a href="#" class="tin1"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin1.png')}}" alt=""></a>
                         </li>
                         <li class="tin2">
-                            <a href="#" class="tin2"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin2.png" alt=""></a>
+                            <a href="#" class="tin2"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin2.png')}}" alt=""></a>
                         </li>
                         <li class="tin3 active">
-                            <a href="#" class="tin3"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin3.png" alt=""></a>
+                            <a href="#" class="tin3"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin3.png')}}" alt=""></a>
                         </li>
                         <li class="tin4">
-                            <a href="#" class="tin4"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin4.png" alt=""></a>
+                            <a href="#" class="tin4"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin4.png')}}" alt=""></a>
                         </li>
                         <li class="tin5">
-                            <a href="#" class="tin5"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin5.png" alt=""></a>
+                            <a href="#" class="tin5"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin5.png')}}" alt=""></a>
                         </li>
                     </ul>
                     <ul class="hide-pc capnhattin-sp">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="tittle-page">
                     <h3>3. BOOKING CONFIRMATION</h3>
-                    <img src="/Themes/RapChieuPhim/Content/content.v2/images/icon09.png" alt="">
+                    <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/icon09.png')}}" alt="">
                 </div>
                 <div class="block-capnhat">
                     <div class="center-login marBot-capnhat">
@@ -92,8 +92,9 @@
                                    
 
                                     
-                                    <div class="btn_dangki">
-                                        <button type="submit" class="capnhat-btn" value="PAYMENT">PAYMENT</button>
+                                    <div class="btn-thongbao form_dangki">
+                                        <button class="btn-back" onclick="location.href='/PlanScreenings/BookTicket?pId=302973'">RETURN TO SEAT SELECT</button>
+                                        <button class="btn-contact" type="submit" name="ctl00$cph1$btnPayment" value="" id="ctl00_cph1_btnPayment">CONTINUE TO PAYMENT</button>
                                     </div>
                                     
                                     

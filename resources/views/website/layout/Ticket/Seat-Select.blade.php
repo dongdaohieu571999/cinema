@@ -15,19 +15,19 @@
             <div class="title_capnhattin">
                 <ul class="capnhattin hide-sp">
                     <li class="tin1">
-                        <a href="#" class="tin1"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin1.png" alt=""></a>
+                        <a href="#" class="tin1"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin1.png')}}" alt=""></a>
                     </li>
                     <li class="tin2 active">
-                        <a href="#" class="tin2"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin2.png" alt=""></a>
+                        <a href="#" class="tin2"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin2.png')}}" alt=""></a>
                     </li>
-                    <li class="tin3">
-                        <a href="#" class="tin3"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin3.png" alt=""></a>
+                    <li class="tin3 ">
+                        <a href="#" class="tin3"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin3.png')}}" alt=""></a>
                     </li>
                     <li class="tin4">
-                        <a href="#" class="tin4"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin4.png" alt=""></a>
+                        <a href="#" class="tin4"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin4.png')}}" alt=""></a>
                     </li>
                     <li class="tin5">
-                        <a href="#" class="tin5"><img src="/Themes/RapChieuPhim/Content/content.v2/images/tin5.png" alt=""></a>
+                        <a href="#" class="tin5"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin5.png')}}" alt=""></a>
                     </li>
                 </ul>
                 <ul class="hide-pc capnhattin-sp">
@@ -67,18 +67,18 @@
                 Click again on the selected seat to cancel the seat selection<br>
                 <span style="color:red">Seatmap displays at its best in landscape mode on mobile devices</span>
             </p>
-          
+           
             <ul class="list-ghe">
-                <li><img src="/Themes/RapChieuPhim/Content/content.v2/images/0000193_ghe-vip.jpg" alt=""> VIP Seats </li>
-                <li><img src="/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong..jpg" alt=""> Normal Seats </li>
-                <li><img src="/Themes/RapChieuPhim/Content/images/seat_active.png" alt=""> Selected Seats</li>
-                <li><img src="/Themes/RapChieuPhim/Content/images/seat_lock.png" alt=""> Unavailable Seats</li>
+                <li><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000193_ghe-vip.jpg')}}" alt=""> VIP Seats </li>
+                <li><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" alt=""> Normal Seats </li>
+                <li><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_active.png')}}" alt=""> Selected Seats</li>
+                <li><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_lock.png')}}" alt=""> Unavailable Seats</li>
             </ul>
-            <img src="/Themes/RapChieuPhim/Content/content.v2/images/img49.png" alt="" class="img-center">
+            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img49.png')}}" alt="" class="img-center">
             
 
 
-a
+
                 <div class="line-ghe">
                     <p class="tx-lf">A</p>
                     <ul>
@@ -194,7 +194,7 @@ a
                 </div>
             </div>
         </div>
-        <a href="#"><img src="/Themes/RapChieuPhim/Content/content.v2/images/livechat.png" alt="" class="livechat"></a>
+      
     </div>
 </div>
 

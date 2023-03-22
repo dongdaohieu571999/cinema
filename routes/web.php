@@ -200,12 +200,29 @@ use App\Http\Controllers\MovieController;
 
 // Website Routes
 
-Route::get('/', [MovieController::class, 'index_user_nowshowing'])
+
+    // Movie 
+    Route::get('/', [MovieController::class, 'index_user_nowshowing'])
     -> name('movie.indexUser');
 
-Route::get('/adHomepage', [MovieController::class, 'index_admin_nowshowing'])
-    -> name('movie.indexAdmin');
+    Route::get('/adHomepage', [MovieController::class, 'index_admin_nowshowing'])
+        -> name('movie.indexAdmin');
 
-Route::get('/moviedetail/{m_id}', [MovieController::class, 'movie_detail'])
-    -> name('movie.detail');
+    Route::get('/moviedetail/{m_id}', [MovieController::class, 'movie_detail'])
+        -> name('movie.detail');
+
+    // Ticket Booking
+    Route::get('/payment', function(){
+        return view('website.layout.Ticket.Payment');
+    });
+
+    Route::get('/seat-select', function(){
+        return view('website.layout.Ticket.Seat-Select');
+    });
+
+    Route::get('/booking-confirm', function(){
+        return view('website.layout.Ticket.Booking-Confirm');
+    });
+        
+
         
