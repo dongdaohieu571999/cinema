@@ -8,6 +8,7 @@
             <p class="card-description">Edit Show</p>
             <form class="forms-sample" action="{{ route('show.update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <input class="form-control" type="hidden" id="show_id" value="{{ $show->show_id }}" name="show_id">
                 <div class="form-group">
                         <label for="m_id"> Movie</label>
                         <select name="m_id" class="form-control">

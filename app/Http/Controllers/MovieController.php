@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Seat;
 use App\Models\Hall;
 use App\Models\Movie;
+use App\Models\Show;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
 use Illuminate\Support\Facades\File;
+use Carbon\Carbon;
 
 class MovieController extends Controller
 {
@@ -54,9 +56,14 @@ class MovieController extends Controller
     public function movie_detail($m_id)
     {        
         $selected_movie = Movie::find($m_id);
-        $nowshowing_movies=Movie::where('status','LIKE','%'.'Now Showing'.'%')
+        $nowshowing_movies = Movie::where('status','LIKE','%'.'Now Showing'.'%')
         ->get();
-        return view('website.layout.Movie.MovieDetail',compact('nowshowing_movies'), ['selected_movie' => $selected_movie]);
+        $startDate = Carbon::today()->subDay();
+        $endDate = Carbon::today()->addDays(7);
+        $movie_show = Show::where('m_id','LIKE','%'.$m_id.'%');
+        $selected_movie_show = $movie_show->whereBetween('showdate', [$startDate, $endDate])
+        ->get();
+        return view('website.layout.Movie.MovieDetail',compact('nowshowing_movies','selected_movie_show'), ['selected_movie' => $selected_movie]);
         
     }
 

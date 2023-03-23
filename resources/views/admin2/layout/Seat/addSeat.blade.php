@@ -18,10 +18,10 @@
                         <div class="form-group">
                             <label for="exampleInputEmail3">Seat Row</label>
                             <select name="seat_row" class="form-control">
-                                <option value="T1">T1</option>
-                                <option value="T2">T2</option>
-                                <option value="T3">T3</option>
-                                <option value="T4">T4</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -39,6 +39,8 @@
                                 <option value="10">10</option>
                                 <option value="11">11</option>
                                 <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
                             </select>
                         </div>                              
                         <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
