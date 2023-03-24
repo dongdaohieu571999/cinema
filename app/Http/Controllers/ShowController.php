@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Show;
 use App\Models\Hall;
 use App\Models\Movie;
+use App\Models\Seat;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers;
@@ -26,6 +27,20 @@ class ShowController extends Controller
         $shows=Show::all();
         return view('admin2.layout.Show.informationShow', compact('shows'));
 
+    }
+
+    public function show_seat_select($show_id)
+    {
+        $show = Show::find($show_id);
+        $seats_rowA = Seat::where('hall_id','LIKE','%'.$show->hallid->hall_id.'%')->where('seat_row','LIKE','%'.'A'.'%')->orderBy('seat_number','asc')
+        ->get();       
+        $seats_rowB = Seat::where('hall_id','LIKE','%'.$show->hallid->hall_id.'%')->where('seat_row','LIKE','%'.'B'.'%')->orderBy('seat_number','asc')
+        ->get();
+        $seats_rowC = Seat::where('hall_id','LIKE','%'.$show->hallid->hall_id.'%')->where('seat_row','LIKE','%'.'C'.'%')->orderBy('seat_number','asc')
+        ->get();
+        $seats_rowD = Seat::where('hall_id','LIKE','%'.$show->hallid->hall_id.'%')->where('seat_row','LIKE','%'.'D'.'%')->orderBy('seat_number','asc')
+        ->get();
+        return view('website.layout.Ticket.Seat-Select', compact('seats_rowA', 'seats_rowB','seats_rowC','seats_rowD'), ['show' => $show]);
     }
 
     public function show_add()

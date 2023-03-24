@@ -64,7 +64,7 @@
                                             <div class="showtime">
                                                 <ul class="showtime__list">
                                                     <li class="showtime__list__item">
-                                                        <span><a href="/PlanScreenings/BookTicket?pId=302776">{{$show->stt_time}}</a></span>
+                                                        <span><a href="{{route('seat.select', $show->show_id)}}">{{$show->stt_time}}</a></span>
                                                         
                                                     </li>
                                                 </ul>

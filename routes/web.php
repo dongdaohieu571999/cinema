@@ -156,7 +156,7 @@ use App\Http\Controllers\MovieController;
     Route::post('/Seat_updated', [SeatController::class, 'seat_update'])
         -> name('seat.update');
 
-    Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_destroy'])
+    Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_delete'])
         ->name('seat.delete');
 
     // Admin Movie Management
@@ -212,13 +212,10 @@ use App\Http\Controllers\MovieController;
         -> name('movie.detail');
 
     // Ticket Booking
-    Route::get('/payment', function(){
-        return view('website.layout.Ticket.Payment');
-    });
+   
 
-    Route::get('/seat-select', function(){
-        return view('website.layout.Ticket.Seat-Select');
-    });
+    Route::get('/seat-select/{show_id}', [ShowController::class, 'show_seat_select'])
+        -> name('seat.select');
 
     Route::get('/booking-confirm', function(){
         return view('website.layout.Ticket.Booking-Confirm');
