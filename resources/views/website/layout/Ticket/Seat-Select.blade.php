@@ -1,6 +1,8 @@
 @extends('website.layout.index')
 
 @section('content')
+
+
 <div id="wrapper">
     <div class="content">
         <div class="banner-left hide-sp">
@@ -77,25 +79,45 @@
             <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/img49.png')}}" alt="" class="img-center">
             
 
+           
 
 
-                <div class="line-ghe">
+
+                <div class="line-ghe" id="seatingChart">
                     <p class="tx-lf">A</p>
                     <ul> 
-                    @foreach ($seats_rowA as $seatA)
-                                           
-                        <a title="{{$seatA->seat_number}}" class="seat preview  8 distance_seat" id="{{$seatA->seat_id}}" onclick="onClick_ChooseChair('{{$seatA->seat_id}}','{{$show->show_id}}')"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" class="preview"><span class="number_seat">{{$seatA->seat_number}}</span></a>
                     
+                    @foreach ($seats_rowA as $seatA)
+                     
+                                    
+                        <a title="{{$seatA->seat_number}}"  data-seat="{{$seatA->seat_row}}{{$seatA->seat_number}}" data-price="70000" class="seat available seat preview  8 distance_seat" id="{{$seatA->seat_id}}" ><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" id="imgClickAndChange{{$seatA->seat_number}}" onclick="changeImage(this)"/><span class="number_seat">{{$seatA->seat_number}}</span></a>
+                        <script>                            
+                            function changeImage(image) {
+                                if (image.src == "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}"){
+                                    image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_active.png')}}";
+                                } else {
+                                    image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}";
+                                }
+                            }                       
+                        </script>  
                     @endforeach
-                    </ul>                    
+                    </ul>      
+                               
                     <p class="tx-lf">A</p>
                     <br></br>
                     <p class="tx-lf">B</p>
-                    <ul> 
+                    <ul>    
                     @foreach ($seats_rowB as $seatB)
-                                           
-                        <a title="{{$seatB->seat_number}}" class="seat preview  8 distance_seat" id="1__0_0_" onclick="onClick_ChooseChair('1__0_0_','8','303001','1','[0:0]','A14')"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" class="preview"><span class="number_seat">{{$seatB->seat_number}}</span></a>
-                    
+                        <a title="{{$seatB->seat_number}}" data-seat="{{$seatB->seat_row}}{{$seatB->seat_number}}" data-price="70000" class="seat available seat preview  8 distance_seat" id="{{$seatB->seat_id}}" ><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" id="imgClickAndChange{{$seatB->seat_number}}" onclick="changeImage(this)"/><span class="number_seat">{{$seatB->seat_number}}</span></a>
+                        <script>                            
+                            function changeImage(image) {
+                                if (image.src == "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}"){
+                                    image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_active.png')}}";
+                                } else {
+                                    image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}";
+                                }
+                            }                       
+                        </script>  
                     @endforeach
                     </ul>                    
                     <p class="tx-lf">B</p>
@@ -104,8 +126,16 @@
                     <ul> 
                     @foreach ($seats_rowC as $seatC)
                                            
-                        <a title="{{$seatC->seat_number}}" class="seat preview  8 distance_seat" id="1__0_0_" onclick="onClick_ChooseChair('1__0_0_','8','303001','1','[0:0]','A14')"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" class="preview"><span class="number_seat">{{$seatC->seat_number}}</span></a>
-                    
+                        <a title="{{$seatC->seat_number}}" data-seat="{{$seatC->seat_row}}{{$seatC->seat_number}}" data-price="70000" class="seat available seat preview  8 distance_seat" id="{{$seatC->seat_id}}" ><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" id="imgClickAndChange{{$seatC->seat_number}}" onclick="changeImage(this)"/><span class="number_seat">{{$seatC->seat_number}}</span></a>
+                        <script>                            
+                            function changeImage(image) {
+                                if (image.src == "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}"){
+                                    image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_active.png')}}";
+                                } else {
+                                    image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}";
+                                }
+                            }                       
+                        </script>
                     @endforeach
                     </ul>                    
                     <p class="tx-lf">C</p>
@@ -114,12 +144,45 @@
                     <ul> 
                     @foreach ($seats_rowD as $seatD)
                                            
-                        <a title="{{$seatD->seat_number}}" class="seat preview  8 distance_seat" id="1__0_0_" onclick="onClick_ChooseChair('1__0_0_','8','303001','1','[0:0]','A14')"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" class="preview"><span class="number_seat">{{$seatD->seat_number}}</span></a>
-                    
+                        <a title="{{$seatD->seat_row}}{{$seatD->seat_number}}" data-price="70000" data-seat="{{$seatD->seat_row}}{{$seatD->seat_number}}"  class="seat available seat preview  8 distance_seat" id="{{$seatD->seat_id}}" ><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" id="imgClickAndChange{{$seatD->seat_number}}" onclick="changeImage(this); selected_seats()"  /><span class="number_seat">{{$seatD->seat_number}}</span></a>
+                        <script>                            
+                            function changeImage(image) {
+                                if (image.src == "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}"){
+                                    image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_active.png')}}";
+                                } else {
+                                    image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}";
+                                }
+                            }        
+                            
+                            function selected_seats(){
+                                const selected_seats = document.getElementbyId('selected_seats');                                
+                                document.getElementbyId("{{$seatD->seat_id}}").title = selected_seats.innerText;
+                            }
+                        </script>
                     @endforeach
                     </ul>                    
                     <p class="tx-lf">D</p>
                 </div>
+                <script>
+                  const seatElements = document.querySelectorAll('.seat');
+                    seatElements.forEach(seat => {
+                        seat.addEventListener('click', () => {
+                        // Toggle seat selection
+                        seat.classList.toggle('selected');
+                        seat.classList.toggle('available');
+                        
+                        // Update selected seat display
+                        const selectedSeats = document.querySelectorAll('.seat.selected');
+                        const selectedSeatNumbers = Array.from(selectedSeats).map(seat => seat.dataset.seat).join(', ');
+                        const selectedSeatsDisplay = document.getElementById('selectedSeats');
+                        const totalPriceDisplay = document.getElementById('totalPrice');
+                        const selectedSeatPrices = Array.from(selectedSeats).map(seat => parseFloat(seat.dataset.price)).filter(price => !isNaN(price));
+                        const totalPrice = selectedSeatPrices.reduce((sum, price) => sum + price, 0);
+                        selectedSeatsDisplay.innerHTML = ` ${selectedSeatNumbers} `;
+                        totalPriceDisplay.innerHTML = ` ${totalPrice} VND `;
+                        });
+                    });
+            </script>
                 <div class="clear"></div>
                 
                 <div class="clear"></div>
@@ -127,26 +190,24 @@
 
                 <div class="right-checkmovie">
                     <button class="title-movie" onclick="location.href='/showtimes-lich-chieu-phim'" style="background:#ffffff08">RESELECT MOVIE </button>
+                    
                     <img src="{{ asset('AdminCSS/Movie_Banner/'.$show->mid->movie_banner) }}" alt="" style="width:176px;height:260px;">
+                    <div class="order_cart_list_1">
+                        <table>
+                            <tr>                                
+                                <td>Selected Seats:</td>
+                                <td class="tx-yel" id="selectedSeats"></td>
+                            </tr>
+                            <tr>                                
+                                <td>Total Price:</td>
+                                <td class="tx-yel" id="totalPrice"></td>
+                            </tr>
+                        </table>
+                    </div>
                     
 
                     <div class="order_cart_list_1">
-       <table>
-           <tbody>
-               <tr>
-                   <td>Selected Seats:</td>
-                   <td class="tx-yel">K4,K5</td>
-               </tr>
-                <tr>
-                 <td class="line">Amount:</td>
-                 <td class="tx-yel tx-right line">2</td>
-               </tr>
-               <tr>
-                   <td class="tx-big">Total:</td>
-                   <td class="tx-yel tx-big">130.000 VNĐ</td>
-               </tr>
-              </tbody>
-         </table>
+       
          <input type="button" id="btn-ao-continue" name="checkout" value="Checkout" class="btn-ao-continue">
     <script type="text/javascript">
         jQuery(document).ready(function () {
