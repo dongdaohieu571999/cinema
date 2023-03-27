@@ -217,9 +217,8 @@ use App\Http\Controllers\MovieController;
     Route::get('/seat-select/{show_id}', [ShowController::class, 'show_seat_select'])
         -> name('seat.select');
 
-    Route::get('/booking-confirm', function(){
-        return view('website.layout.Ticket.Booking-Confirm');
-    });
+    Route::get('/booking-confirm/{show_id}', [ShowController::class, 'show_checkout'])
+        ->name('show.checkout');
         
 
         

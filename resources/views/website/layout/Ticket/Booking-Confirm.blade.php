@@ -56,40 +56,54 @@
 
                                         <div class="email">
                                             Movie
-                                            <input readonly  autofocus="autofocus " id="Email" name="movie" type="text" value="" class="valid">
+                                            <input readonly  autofocus="autofocus " id="Email" name="movie" type="text" value="{{$show->mid->name}}" class="valid">
                                             <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
                                             
                                         </div>
 
                                         <div class="email">
                                             Hall
-                                            <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="" class="valid">
+                                            <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="{{$show->hallid->hall_name}}" class="valid">
                                             <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
                                             
                                         </div>
 
                                         <div class="email">
                                             Showtime
-                                            <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="" class="valid">
+                                            <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="{{$show->stt_time}} {{$show->showdate}}" class="valid">
                                             <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
                                             
                                         </div>
 
                                         <div class="email">
                                             Seats
-                                            <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="" class="valid">
+                                            <input readonly  autofocus="autofocus " id="selectedSeats" name="selectedSeats" type="text" value="" class="valid">
                                             <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
                                             
                                         </div>
 
                                         <div class="email">
                                             Total
-                                            <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="" class="valid">
+                                            <input readonly  autofocus="autofocus " id="totalPrice" name="totalPrice" type="text" value="" class="valid">
                                             <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
                                             
                                         </div>
                                   
-                                   
+                                   <script>
+                                      // Get selected seats and total price from URL parameters
+                                      const urlParams = new URLSearchParams(window.location.search);
+                                        const selectedSeats = urlParams.get("seats").split(",");
+                                        const totalPrice = urlParams.get("price").split(",")
+
+                                        // Create comma-separated string of selected seats
+                                        const seatNumbers = selectedSeats.map(seat => seat.id).join(', ');
+
+                                        // Display selected seats and total price
+                                        const selectedSeatsDisplay = document.getElementById('selectedSeats');
+                                        selectedSeatsDisplay.value = seatNumbers;
+                                        const totalPriceDisplay = document.getElementById('totalPrice');
+                                        totalPriceDisplay.value = `${totalPrice.toFixed(2)}VND`;
+                                   </script>
 
                                     
                                     <div class="btn-thongbao form_dangki">

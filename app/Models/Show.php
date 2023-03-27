@@ -25,6 +25,11 @@ class Show extends Model
         return $this->belongsTo('App\Models\Movie','m_id');
     }
 
+    public function booking()
+    {
+        return $this->hasMany('App\Models\Booking');
+    }
+
 
 
 }

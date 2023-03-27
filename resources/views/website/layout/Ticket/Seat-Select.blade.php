@@ -180,9 +180,20 @@
                         const totalPrice = selectedSeatPrices.reduce((sum, price) => sum + price, 0);
                         selectedSeatsDisplay.innerHTML = ` ${selectedSeatNumbers} `;
                         totalPriceDisplay.innerHTML = ` ${totalPrice} VND `;
+
+                        
                         });
                     });
-            </script>
+                    const selectedSeats = JSON.stringify(selectedSeats);
+                    function checkout() {
+                        // construct URL with selected seats
+                        let url = "{{route('show.checkout',$show->show_id)}}?seats=" + selectedSeats.join(",") +"&price=" + totalPrice;
+                        // redirect to checkout page
+                        window.location.href = url;
+                    }
+                    // window.location.href = `{{route('show.checkout',$show->show_id)}}?seats=${selectedSeats}&price=${totalPrice}`;      
+                </script>
+           
                 <div class="clear"></div>
                 
                 <div class="clear"></div>
@@ -207,28 +218,10 @@
                     
 
                     <div class="order_cart_list_1">
-       
-         <input type="button" id="btn-ao-continue" name="checkout" value="Checkout" class="btn-ao-continue">
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-              jQuery('#btn-ao-continue').click(function () {
-                var _url = '/ShoppingCart/StartCheckout';
-                if ($isProcess == true) {
-                    alert("Xin bạn chờ đợi trong giấy lát hệ thống  đang thực hiện giao dịch trước đó của bạn");
-                    return false;
-                }
-                  $isProcess = true;
-                  jQuery.get(_url, function (data) {
-                      $isProcess = false;
-                     if (data != undefined && data.redirect) {
-                         location.href = data.redirect;
-                     }
-                     else {
-                         location.href = '/checkout';
-                  }
-              });
-             });
-        });</script></div>
+       @csrf
+         <button id="bookButton" onclick="checkout()" name="checkout" class="btn-ao-continue">Checkout</button>
+        
+        </div>
 
 
 

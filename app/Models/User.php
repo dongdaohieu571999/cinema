@@ -55,5 +55,10 @@ class User extends Authenticatable
         return $this->hasOne(User::class,'user_id','avatar');
     }
 
+    public function booking()
+    {
+        return $this->hasMany('App\Models\Booking');
+    }
+
     
 }

@@ -43,6 +43,12 @@ class ShowController extends Controller
         return view('website.layout.Ticket.Seat-Select', compact('seats_rowA', 'seats_rowB','seats_rowC','seats_rowD'), ['show' => $show]);
     }
 
+    public function show_checkout($show_id)
+    {
+        $show = Show::find($show_id);
+        return view('website.layout.Ticket.Booking-Confirm', ['show' => $show]);
+    }
+
     public function show_add()
     {
         $halls=Hall::all();
