@@ -27,7 +27,7 @@ class Show extends Model
 
     public function booking()
     {
-        return $this->belongsTo(Show::class);
+        return $this->hasMany('App\Models\Booking');
     }
 
 

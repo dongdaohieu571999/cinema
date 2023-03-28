@@ -17,6 +17,7 @@
                         <th> Showtime </th>
                         <th> Seat Numbers</th>
                         <th> Booking Date </th>
+                        <th> Action </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -29,7 +30,6 @@
                         <td>{{ $booking->seat_number }}</td>
                         <td>{{ $booking->created_at }}</td>
                         <td> 
-                            <a href="{{route('hall.edit', $booking->booking_id)}}"><button type="submit" class="btn btn-gradient-primary mr-2">Edit</button></a>
                             <a href="{{route('booking.delete', $booking->booking_id)}}" onclick="return confirm('Are you sure you want to delete this item?');"><button class="btn btn-light">Delete</button></a>
                         </td>
                     </tr>

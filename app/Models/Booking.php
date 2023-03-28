@@ -18,7 +18,7 @@ class Booking extends Model
     }
 
     public function showid() {
-        return $this->belongsTo(Show::class);
+        return $this->belongsTo('App\Models\Show', 'show_id');
     }
 
     
