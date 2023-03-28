@@ -7,6 +7,7 @@ use App\Http\Controllers\HallController;
 use App\Http\Controllers\SeatController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -178,6 +179,13 @@ use App\Http\Controllers\MovieController;
     Route::get('/Movie_delete/{m_id}', [MovieController::class, 'movie_delete'])
         ->name('movie.delete');
 
+    // Admin Booking Management
+    Route::get('/BookingManagement', [BookingController::class, 'index'])
+        -> name('booking.index');
+
+    Route::get('/Booking_delete/{booking_id}', [BookingController::class, 'booking_delete'])
+        ->name('booking.delete');
+
 // User Routes
 
     // User Login
@@ -219,6 +227,18 @@ use App\Http\Controllers\MovieController;
 
     Route::get('/booking-confirm/{show_id}', [ShowController::class, 'show_checkout'])
         ->name('show.checkout');
-        
+    
+    Route::get('/payment',  function(){
+        return view('website.layout.Ticket.Payment');        
+    })
+        ->name('show.payment');    
 
+    Route::post('/checkout', [BookingController::class, 'booking_store'])
+        -> name('booking.store');
+    
+    Route::get('/booking-successful', function(){
+        return view('website.layout.Ticket.Successful-Booking');
+    })
+        ->name('booking.success');
+    
         

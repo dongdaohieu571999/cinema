@@ -20,24 +20,24 @@
                         <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin1.png')}}" alt="">
                     </li>
                     <li class="tin2">
-                        <a href="#" class="tin2"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin2-selected.png')}}" alt=""></a>
+                        <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin2-selected.png')}}" alt=""></a>
                     </li>
                     <li class="tin3 ">
-                        <a href="#" class="tin3"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin3.png')}}" alt=""></a>
+                        <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin3.png')}}" alt=""></a>
                     </li>
                     <li class="tin4">
-                        <a href="#" class="tin4"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin4.png')}}" alt=""></a>
+                        <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin4.png')}}" alt=""></a>
                     </li>
                     <li class="tin5">
-                        <a href="#" class="tin5"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin5.png')}}" alt=""></a>
+                        <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin5.png')}}" alt=""></a>
                     </li>
                 </ul>
                 <ul class="hide-pc capnhattin-sp">
                     <li>1.MOVIE SELECT</li>
-                    <li class="active"><a href="#">2.SEAT SELECT</a></li>
-                    <li><a href="#">3.BOOKING CONFIRMATION</a></li>
-                    <li><a href="#">4.PAYMENT</a></li>
-                    <li><a href="#">5.NOTIFICATION</a></li>
+                    <li class="active">2.SEAT SELECT</a></li>
+                    <li>3.BOOKING CONFIRMATION</a></li>
+                    <li>4.PAYMENT</a></li>
+                    <li>5.NOTIFICATION</a></li>
                 </ul>
             </div>
             <div class="tittle-page">
@@ -180,18 +180,15 @@
                         const totalPrice = selectedSeatPrices.reduce((sum, price) => sum + price, 0);
                         selectedSeatsDisplay.innerHTML = ` ${selectedSeatNumbers} `;
                         totalPriceDisplay.innerHTML = ` ${totalPrice} VND `;
-
+                        
+                         // Store selected seats and total price in local storage
+                        localStorage.setItem('selectedSeats', selectedSeatNumbers);
+                        localStorage.setItem('totalPrice', totalPrice);
                         
                         });
-                    });
-                    const selectedSeats = JSON.stringify(selectedSeats);
-                    function checkout() {
-                        // construct URL with selected seats
-                        let url = "{{route('show.checkout',$show->show_id)}}?seats=" + selectedSeats.join(",") +"&price=" + totalPrice;
-                        // redirect to checkout page
-                        window.location.href = url;
-                    }
-                    // window.location.href = `{{route('show.checkout',$show->show_id)}}?seats=${selectedSeats}&price=${totalPrice}`;      
+                    });                    
+                    
+                  
                 </script>
            
                 <div class="clear"></div>
@@ -200,7 +197,7 @@
         </div>
 
                 <div class="right-checkmovie">
-                    <button class="title-movie" onclick="location.href='/showtimes-lich-chieu-phim'" style="background:#ffffff08">RESELECT MOVIE </button>
+                    <button class="title-movie" onclick="location.href='/'" style="background:#ffffff08">RESELECT MOVIE </button>
                     
                     <img src="{{ asset('AdminCSS/Movie_Banner/'.$show->mid->movie_banner) }}" alt="" style="width:176px;height:260px;">
                     <div class="order_cart_list_1">
@@ -219,7 +216,7 @@
 
                     <div class="order_cart_list_1">
        @csrf
-         <button id="bookButton" onclick="checkout()" name="checkout" class="btn-ao-continue">Checkout</button>
+         <button id="bookButton" name="checkout" class="btn-ao-continue"><a href="{{ route('show.checkout', $show->show_id) }}">Checkout</a></button>
         
         </div>
 

@@ -15,27 +15,27 @@
                 <div class="title_capnhattin">
                     <ul class="capnhattin hide-sp">
                         <li class="tin1">
-                            <a href="#" class="tin1"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin1.png')}}" alt=""></a>
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin1.png')}}" alt="">
                         </li>
                         <li class="tin2">
-                            <a href="#" class="tin2"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin2.png')}}" alt=""></a>
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin2.png')}}" alt=""></a>
                         </li>
-                        <li class="tin3 active">
-                            <a href="#" class="tin3"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin3.png')}}" alt=""></a>
+                        <li class="tin3 ">
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin3-selected.png')}}" alt=""></a>
                         </li>
                         <li class="tin4">
-                            <a href="#" class="tin4"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin4.png')}}" alt=""></a>
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin4.png')}}" alt=""></a>
                         </li>
                         <li class="tin5">
-                            <a href="#" class="tin5"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin5.png')}}" alt=""></a>
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin5.png')}}" alt=""></a>
                         </li>
                     </ul>
                     <ul class="hide-pc capnhattin-sp">
-                        <li><a href="#">1.MOVIE SELECT</a></li>
-                        <li><a href="#">2.SEAT SELECT</a></li>
-                        <li class="active"><a href="#">3.BOOKING CONFIRMATION</a></li>
-                        <li><a href="#">4.PAYMENT</a></li>
-                        <li><a href="#">5.NOTIFICATION</a></li>
+                        <li>1.MOVIE SELECT</li>
+                        <li class="active">2.SEAT SELECT</a></li>
+                        <li>3.BOOKING CONFIRMATION</a></li>
+                        <li>4.PAYMENT</a></li>
+                        <li>5.NOTIFICATION</a></li>
                     </ul>
                 </div>
                 <div class="tittle-page">
@@ -52,64 +52,77 @@
                         
 
                         <div class="form_dangki">
-                        <form action="/login/checkoutasguest?returnUrl=%2Fcheckout" method="post" novalidate="novalidate">                                
+                        <form action="{{route('booking.store')}}" method="post" enctype="multipart/form-data">
+                            @csrf                                
+                            <div class="email">
+                                Full Name
+                                <input readonly  autofocus="autofocus " id="Email" name="user_fullname" type="text" value="{{Auth::user()->full_name}}"  class="valid"></input>
+                                <input type="hidden" name="user_id" value="{{Auth::user()->user_id}}">
+                                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                
+                            </div>
 
-                                        <div class="email">
-                                            Movie
-                                            <input readonly  autofocus="autofocus " id="Email" name="movie" type="text" value="{{$show->mid->name}}" class="valid">
-                                            <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-                                            
-                                        </div>
 
-                                        <div class="email">
-                                            Hall
-                                            <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="{{$show->hallid->hall_name}}" class="valid">
-                                            <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-                                            
-                                        </div>
+                            <div class="email">
+                                Movie
+                                <input readonly  autofocus="autofocus " id="Email" name="movie" type="text" value="{{$show->mid->name}}" class="valid">
+                                <input type="hidden" name="show_id" value="{{$show->show_id}}">
+                                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                
+                            </div>
 
-                                        <div class="email">
-                                            Showtime
-                                            <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="{{$show->stt_time}} {{$show->showdate}}" class="valid">
-                                            <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-                                            
-                                        </div>
+                            <div class="email">
+                                Hall
+                                <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="{{$show->hallid->hall_name}}" class="valid">
+                                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                
+                            </div>
 
-                                        <div class="email">
-                                            Seats
-                                            <input readonly  autofocus="autofocus " id="selectedSeats" name="selectedSeats" type="text" value="" class="valid">
-                                            <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-                                            
-                                        </div>
+                            <div class="email">
+                                Showtime
+                                <input readonly  autofocus="autofocus " id="Email" name="hall" type="text" value="{{$show->stt_time}} {{$show->showdate}}" class="valid">
+                                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                
+                            </div>
+                            
 
-                                        <div class="email">
-                                            Total
-                                            <input readonly  autofocus="autofocus " id="totalPrice" name="totalPrice" type="text" value="" class="valid">
-                                            <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-                                            
-                                        </div>
+                            <div class="email">
+                                Seats
+                                <input readonly  autofocus="autofocus " id="selectedSeats" name="seat_number" type="text" value="" class="valid">
+                                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                
+                            </div>
+
+                            <div class="email">
+                                Total
+                                <input readonly  autofocus="autofocus " id="totalPrice" name="total_price" type="text" value="" class="valid">
+                                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                
+                            </div>
                                   
-                                   <script>
-                                      // Get selected seats and total price from URL parameters
-                                      const urlParams = new URLSearchParams(window.location.search);
-                                        const selectedSeats = urlParams.get("seats").split(",");
-                                        const totalPrice = urlParams.get("price").split(",")
+                                   <script> 
+                                     // Retrieve selected seats and total price from local storage
+                                        const selectedSeatNumbers = localStorage.getItem('selectedSeats');
+                                        const totalPrice = localStorage.getItem('totalPrice');
 
-                                        // Create comma-separated string of selected seats
-                                        const seatNumbers = selectedSeats.map(seat => seat.id).join(', ');
-
-                                        // Display selected seats and total price
+                                        // Display selected seats and total price on next page
                                         const selectedSeatsDisplay = document.getElementById('selectedSeats');
-                                        selectedSeatsDisplay.value = seatNumbers;
                                         const totalPriceDisplay = document.getElementById('totalPrice');
-                                        totalPriceDisplay.value = `${totalPrice.toFixed(2)}VND`;
+                                        selectedSeatsDisplay.value = ` ${selectedSeatNumbers} `;
+                                        totalPriceDisplay.value = ` ${totalPrice} VND `;
                                    </script>
 
                                     
                                     <div class="btn-thongbao form_dangki">
-                                        <button class="btn-back" onclick="location.href='/PlanScreenings/BookTicket?pId=302973'">RETURN TO SEAT SELECT</button>
+                                        <a href="/" class="btn-back">CANCEL</a>
                                         <button class="btn-contact" type="submit" name="ctl00$cph1$btnPayment" value="" id="ctl00_cph1_btnPayment">CONTINUE TO PAYMENT</button>
                                     </div>
+
+                                    <script>
+                                        function goBack() {
+                                        window.history.back();
+                                        }
+                                    </script>
                                     
                                     
 

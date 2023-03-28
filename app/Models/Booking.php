@@ -14,7 +14,7 @@ class Booking extends Model
     
     public function userid()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 
     public function showid() {
@@ -22,6 +22,6 @@ class Booking extends Model
     }
 
     public $fillable = [
-        'user_id','show_id','booking_date','seat_number'
+        'user_id','show_id' ,'total_price','seat_number'
     ];
 }

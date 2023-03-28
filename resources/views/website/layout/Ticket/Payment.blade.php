@@ -15,73 +15,67 @@
                 <div class="title_capnhattin">
                     <ul class="capnhattin hide-sp">
                         <li class="tin1">
-                            <a href="#" class="tin1"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin1.png')}}" alt=""></a>
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin1.png')}}" alt="">
                         </li>
                         <li class="tin2">
-                            <a href="#" class="tin2"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin2.png')}}" alt=""></a>
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin2.png')}}" alt=""></a>
                         </li>
                         <li class="tin3 ">
-                            <a href="#" class="tin3"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin3.png')}}" alt=""></a>
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin3.png')}}" alt=""></a>
                         </li>
-                        <li class="tin4 active">
-                            <a href="#" class="tin4"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin4.png')}}" alt=""></a>
+                        <li class="tin4">
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin4-selected.png')}}" alt=""></a>
                         </li>
                         <li class="tin5">
-                            <a href="#" class="tin5"><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin5.png')}}" alt=""></a>
+                            <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/tin5.png')}}" alt=""></a>
                         </li>
                     </ul>
                     <ul class="hide-pc capnhattin-sp">
-                    <li><a href="#">1.MOVIE SELECT</a></li>
-                    <li><a href="#">2.SEAT SELECT</a></li>
-                    <li><a href="#">3.BOOKING CONFIRMATION</a></li>
-                    <li class="active"><a href="#">4.PAYMENT</a></li>
-                    <li><a href="#">5.NOTIFICATION</a></li>
+                        <li>1.MOVIE SELECT</li>
+                        <li class="active">2.SEAT SELECT</a></li>
+                        <li>3.BOOKING CONFIRMATION</a></li>
+                        <li>4.PAYMENT</a></li>
+                        <li>5.NOTIFICATION</a></li>
                     </ul>
                 </div>
                 <div class="tittle-page">
                     <h3>4. PAYMENT</h3>
                     <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/icon-thanhtoan.png')}}" alt="">
                 </div>
-<form action="/onepagecheckout" data-ajax="true" data-ajax-begin="return BeforeSumbit();" data-ajax-loading="#lean_overlay" data-ajax-method="Post" data-ajax-success="checkForRedirect(data)" id="form0" method="post" novalidate="novalidate">                    <div class="block-payment" style="height: 1441.3px;">
+                <form action="/onepagecheckout" data-ajax="true" data-ajax-begin="return BeforeSumbit();" data-ajax-loading="#lean_overlay" data-ajax-method="Post" data-ajax-success="checkForRedirect(data)" id="form0" method="post" novalidate="novalidate">                    <div class="block-payment" style="height: 1441.3px;">
                         <div class="center-login marBot-capnhat">
                             <div class="form-payment">
                                 
                                     <div class="title-pay">
                                         1. Your  Information
+                                    </div>              
+
+                                    <input data-val="true" data-val-number="The field Id must be a number." data-val-required="'Id' must not be empty." id="BillingNewAddress_Id" name="BillingNewAddress.Id" type="hidden" value="0">
+                                    <div class="title-information">
+                                        <p>Email Address (<span>*</span>)</p>
+                                        <input data-val="true" data-val-email="Định dạng hòm thư không đúng" data-val-required="Yêu cầu nhập hòm thư." value="{{Auth::user()->email}}"id="BillingNewAddress_Email" name="BillingNewAddress.Email" type="text" value="">
+                                        <span class="field-validation-valid" data-valmsg-for="BillingNewAddress.Email" data-valmsg-replace="true"></span>
+                                        
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Full Name (<span>*</span>)</p>
+                                            <input data-val="true" data-val-required="Yêu cầu nhập họ." id="BillingNewAddress_LastName" value="{{Auth::user()->full_name}}"name="BillingNewAddress.LastName" type="text" value="">
+                                            <span class="field-validation-valid" data-valmsg-for="BillingNewAddress.LastName" data-valmsg-replace="true"></span>
+                                            
+                                        </div>
                                     
-
-
-
-
-  
-
-<input data-val="true" data-val-number="The field Id must be a number." data-val-required="'Id' must not be empty." id="BillingNewAddress_Id" name="BillingNewAddress.Id" type="hidden" value="0">
-<div class="title-information">
-    <p>Email Address (<span>*</span>)</p>
-    <input data-val="true" data-val-email="Định dạng hòm thư không đúng" data-val-required="Yêu cầu nhập hòm thư." id="BillingNewAddress_Email" name="BillingNewAddress.Email" type="text" value="">
-    <span class="field-validation-valid" data-valmsg-for="BillingNewAddress.Email" data-valmsg-replace="true"></span>
-    
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <p>Full Name (<span>*</span>)</p>
-        <input data-val="true" data-val-required="Yêu cầu nhập họ." id="BillingNewAddress_LastName" name="BillingNewAddress.LastName" type="text" value="">
-        <span class="field-validation-valid" data-valmsg-for="BillingNewAddress.LastName" data-valmsg-replace="true"></span>
-        
-    </div>
-   
-</div>
-    <div class="title-information">
-        <p>Telephone (<span>*</span>)</p>
-        <input data-val="true" data-val-required="Yêu cầu nhập số điện thoại" id="BillingNewAddress_PhoneNumber" name="BillingNewAddress.PhoneNumber" type="text" value="">
-        <span class="field-validation-valid" data-valmsg-for="BillingNewAddress.PhoneNumber" data-valmsg-replace="true"></span>
-        
-    </div>
-    
-    <div class="text-last-information">
-        <span>(*) Required Information</span>
-    </div>
+                                    </div>
+                                        <div class="title-information">
+                                            <p>Telephone (<span>*</span>)</p>
+                                            <input data-val="true" data-val-required="Yêu cầu nhập số điện thoại" id="BillingNewAddress_PhoneNumber" value="0{{Auth::user()->phone}}" name="BillingNewAddress.PhoneNumber" type="text" value="">
+                                            <span class="field-validation-valid" data-valmsg-for="BillingNewAddress.PhoneNumber" data-valmsg-replace="true"></span>
+                                            
+                                        </div>
+                                        
+                                        <div class="text-last-information">
+                                            <span>(*) Required Information</span>
+                                        </div>
 
 
     
@@ -98,34 +92,46 @@
 
                                         </div>
 
-
-                                        
-
                                     </div>
                                  
                                     <table class="table table-payment">
-    <thead>
-        <tr>
-            <th>Selected Seats</th>
-            <th>Amount</th>
-            <th>Total</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>K9,K8</td>
-            <td>2</td>
-            <td>130000 (VND)</td>
-        </tr>
-    </tbody>
-</table>
+                                        <thead>
+                                            <tr>
+                                                <th>Selected Seats</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td id="selectedSeats"</td>
+                                                <td id="totalPrice">130000 (VND)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <script> 
+                                        // Retrieve selected seats and total price from local storage
+                                        const selectedSeatNumbers = localStorage.getItem('selectedSeats');
+                                        const totalPrice = localStorage.getItem('totalPrice');
+
+                                        // Display selected seats and total price on next page
+                                        const selectedSeatsDisplay = document.getElementById('selectedSeats');
+                                        const totalPriceDisplay = document.getElementById('totalPrice');
+                                        selectedSeatsDisplay.innerHTML = ` ${selectedSeatNumbers} `;
+                                        totalPriceDisplay.innerHTML = ` ${totalPrice} VND `;
+
+                                                                                
+                                        // Clear selected seats and total price from local storage
+                                        localStorage.removeItem('selectedSeats');
+                                        localStorage.removeItem('totalPrice');
+                                   </script>
 
 
                                   
                                     
                                     <div class="btn-thongbao form_dangki">
-                                        <button class="btn-back" onclick="location.href='/PlanScreenings/BookTicket?pId=302973'">RETURN TO SEAT SELECT</button>
-                                        <button class="btn-contact" type="submit" name="ctl00$cph1$btnPayment" value="" id="ctl00_cph1_btnPayment">CONTINUE</button>
+                                        <a href="/" class="btn-back">CANCEL</a>
+                                        <button class="btn-contact" type="submit" name="ctl00$cph1$btnPayment" value="" id="ctl00_cph1_btnPayment"><a href="{{route('booking.success')}}">CONTINUE</a></button>
                                     </div>
                                 
                             </div>

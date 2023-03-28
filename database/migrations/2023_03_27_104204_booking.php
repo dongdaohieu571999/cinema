@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('show_id')->unsigned(); 
             $table ->foreign('show_id')->references('show_id')->on('show');
             $table->string('seat_number');
-            $table->string('booking_date');
+            $table->string('total_price');
             $table->timestamps();
         });
     }
