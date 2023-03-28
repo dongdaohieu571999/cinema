@@ -109,7 +109,7 @@
     <div class="right">
         <span>
                 <span>
-                    <a href="" type="button" class="active" data-toggle="modal" style="font-size:14px">Hi, {{session('user')}}</a>
+                    <a href="/UserProfile" type="button" class="active" data-toggle="modal" style="font-size:14px">Hi, {{session('user')}}</a>
                     <a href="/admin" type="button" class="active" data-toggle="modal" style="font-size:14px">Admin Panel</a>
                     <a href="{{ route ('logout') }}" type="button" data-toggle="modal" style="font-size:14px">Logout</a>
                 </span>

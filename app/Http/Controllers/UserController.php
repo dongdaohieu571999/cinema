@@ -347,4 +347,58 @@ class UserController extends Controller
 
     }
 
+    public function user_self_update(Request $request)
+    {
+        
+        if ($request->isMethod('POST')){
+            $fileName="";
+            if ($request->hasFile('avatar')) {
+
+                $file = $request->file('avatar');
+    
+                $path = public_path('UserCSS/Users_Avatar');
+    
+                $fileName = time() . '_' . $file->getClientOriginalName();
+    
+                $file->move($path, $fileName);
+    
+            } 
+    
+            $user = User::find($request->input('user_id'));
+    
+            if ($user != null) {                    
+    
+                $user->email = $request->email;
+    
+                $user->full_name = $request->full_name;
+    
+                $user->role_id = $request->role_id;
+    
+                $user->phone = $request->phone;
+
+                if ($user->password != $request->password){
+                    $user->password = Hash::make($request->password);
+                }
+    
+                if($fileName){
+                    $user->avatar = $fileName;
+                }
+
+              
+    
+                $user->save();
+    
+                return redirect()->route('user.profile')->with('message', 'User updated successfully!');
+    
+                } 
+            
+            else {
+    
+                return redirect()->route('user.profile')->with('message', 'User is not updated!');
+    
+                }
+        }        
+
+    }
+
 }

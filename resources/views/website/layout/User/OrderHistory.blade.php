@@ -1,41 +1,44 @@
+@INCLUDE('website.layout.head')
 
-@extends('admin2.layout.index')
-
-@section('content')
-
+@if(session()->has('user'))
+    @INCLUDE('website.layout.navbar-admin-log')
+@else
+    @INCLUDE('website.layout.navbar-unlog')
+@endif
+   
+<link rel="stylesheet" href="{{ asset('AdminCSS/assets/css/style.css')}}">
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Booking Management</h4>
+        <h4 class="card-title">Your Booking</h4>
         
             <br> </br>
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th> # </th>
-                        <th> User Email </th>
                         <th> Movie </th>
                         <th> Showtime </th>
                         <th> Seat Numbers</th>
                         <th> Booking Date </th>
-                        <th> Action </th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($bookings as $booking)
                     <tr>
-                        <td>B{{ $booking->booking_id}} </td>
-                        <td>{{ $booking->userid->email }}</td>
+                        
                         <td>{{ $booking->showid->mid->name }}</td>
                         <td>{{ $booking->showid->stt_time }} {{ $booking->showid->showdate }}</td>
                         <td>{{ $booking->seat_number }}</td>
                         <td>{{ $booking->created_at }}</td>
-                        <td> 
-                            <a href="{{route('booking.delete', $booking->booking_id)}}" onclick="return confirm('Are you sure you want to delete this item?');"><button class="btn btn-light">Delete</button></a>
-                        </td>
+                        
                     </tr>
                     @endforeach
                     </tbody>
                 </table>
+                <br></br>
+
+                <a href="/UserProfile"><button class="btn btn-primary profile-button"  type="button">Return to your Profile Settings</button></a>
         </div>
+    </div> 
     </div>
-@endsection
+
+@INCLUDE('website.layout.footer')
