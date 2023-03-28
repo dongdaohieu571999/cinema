@@ -64,8 +64,18 @@
                                             <div class="showtime">
                                                 <ul class="showtime__list">
                                                     <li class="showtime__list__item">
-                                                        <span><a href="{{route('seat.select', $show->show_id)}}">{{$show->stt_time}}</a></span>
-                                                        
+                                                    <script>
+                                                        function LoginWarning(){
+                                                            alert("Please login first!");
+                                                        }
+                                                    </script>
+                                                        <span>
+                                                        @if(session()->has('user'))
+                                                            <a href="{{route('seat.select', $show->show_id)}}">{{$show->stt_time}}</a>
+                                                        @else
+                                                        <a onclick="LoginWarning()">{{$show->stt_time}}</a>
+                                                        </span>
+                                                        @endif                                                        
                                                     </li>
                                                 </ul>
                                             </div>

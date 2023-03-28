@@ -88,8 +88,13 @@
                     <ul> 
                     
                     @foreach ($seats_rowA as $seatA)
-                     
-                                    
+                        
+                    <?php $seatNumberA = $seatA->seat_row . $seatA->seat_number; ?>
+                        @if (in_array($seatNumberA, $bookingSeatNumbers))    
+                           
+                        <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_lock.png')}}"/><span class="number_seat">{{$seatA->seat_number}}</span>
+                        
+                        @else
                         <a title="{{$seatA->seat_number}}"  data-seat="{{$seatA->seat_row}}{{$seatA->seat_number}}" data-price="70000" class="seat available seat preview  8 distance_seat" id="{{$seatA->seat_id}}" ><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" id="imgClickAndChange{{$seatA->seat_number}}" onclick="changeImage(this)"/><span class="number_seat">{{$seatA->seat_number}}</span></a>
                         <script>                            
                             function changeImage(image) {
@@ -99,7 +104,8 @@
                                     image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}";
                                 }
                             }                       
-                        </script>  
+                        </script>
+                        @endif  
                     @endforeach
                     </ul>      
                                
@@ -108,6 +114,13 @@
                     <p class="tx-lf">B</p>
                     <ul>    
                     @foreach ($seats_rowB as $seatB)
+                        
+                    <?php $seatNumberB = $seatB->seat_row . $seatB->seat_number; ?>
+                        @if (in_array($seatNumberB, $bookingSeatNumbers))    
+                            
+                        <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_lock.png')}}"/><span class="number_seat">{{$seatB->seat_number}}</span>
+                        
+                        @else
                         <a title="{{$seatB->seat_number}}" data-seat="{{$seatB->seat_row}}{{$seatB->seat_number}}" data-price="70000" class="seat available seat preview  8 distance_seat" id="{{$seatB->seat_id}}" ><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" id="imgClickAndChange{{$seatB->seat_number}}" onclick="changeImage(this)"/><span class="number_seat">{{$seatB->seat_number}}</span></a>
                         <script>                            
                             function changeImage(image) {
@@ -117,7 +130,8 @@
                                     image.src = "{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}";
                                 }
                             }                       
-                        </script>  
+                        </script>
+                        @endif  
                     @endforeach
                     </ul>                    
                     <p class="tx-lf">B</p>
@@ -125,6 +139,12 @@
                     <p class="tx-lf">C</p>
                     <ul> 
                     @foreach ($seats_rowC as $seatC)
+                    <?php $seatNumberC = $seatC->seat_row . $seatC->seat_number; ?>
+                        @if (in_array($seatNumberC, $bookingSeatNumbers))    
+                            
+                        <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_lock.png')}}"/><span class="number_seat">{{$seatC->seat_number}}</span>
+                        
+                        @else
                                            
                         <a title="{{$seatC->seat_number}}" data-seat="{{$seatC->seat_row}}{{$seatC->seat_number}}" data-price="70000" class="seat available seat preview  8 distance_seat" id="{{$seatC->seat_id}}" ><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" id="imgClickAndChange{{$seatC->seat_number}}" onclick="changeImage(this)"/><span class="number_seat">{{$seatC->seat_number}}</span></a>
                         <script>                            
@@ -136,6 +156,8 @@
                                 }
                             }                       
                         </script>
+
+                        @endif
                     @endforeach
                     </ul>                    
                     <p class="tx-lf">C</p>
@@ -143,6 +165,13 @@
                     <p class="tx-lf">D</p>
                     <ul> 
                     @foreach ($seats_rowD as $seatD)
+                        
+                        <?php $seatNumberD = $seatD->seat_row . $seatD->seat_number; ?>
+                        @if (in_array($seatNumberD, $bookingSeatNumbers))    
+                            
+                        <img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/seat_lock.png')}}"/><span class="number_seat">{{$seatD->seat_number}}</span>
+                        
+                        @else
                                            
                         <a title="{{$seatD->seat_row}}{{$seatD->seat_number}}" data-price="70000" data-seat="{{$seatD->seat_row}}{{$seatD->seat_number}}"  class="seat available seat preview  8 distance_seat" id="{{$seatD->seat_id}}" ><img src="{{ asset('/WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/0000194_ghe-thuong.jpg')}}" id="imgClickAndChange{{$seatD->seat_number}}" onclick="changeImage(this); selected_seats()"  /><span class="number_seat">{{$seatD->seat_number}}</span></a>
                         <script>                            
@@ -159,6 +188,8 @@
                                 document.getElementbyId("{{$seatD->seat_id}}").title = selected_seats.innerText;
                             }
                         </script>
+
+                        @endif
                     @endforeach
                     </ul>                    
                     <p class="tx-lf">D</p>
@@ -173,12 +204,12 @@
                         
                         // Update selected seat display
                         const selectedSeats = document.querySelectorAll('.seat.selected');
-                        const selectedSeatNumbers = Array.from(selectedSeats).map(seat => seat.dataset.seat).join(', ');
+                        const selectedSeatNumbers = Array.from(selectedSeats).map(seat => seat.dataset.seat).join(',');
                         const selectedSeatsDisplay = document.getElementById('selectedSeats');
                         const totalPriceDisplay = document.getElementById('totalPrice');
                         const selectedSeatPrices = Array.from(selectedSeats).map(seat => parseFloat(seat.dataset.price)).filter(price => !isNaN(price));
                         const totalPrice = selectedSeatPrices.reduce((sum, price) => sum + price, 0);
-                        selectedSeatsDisplay.innerHTML = ` ${selectedSeatNumbers} `;
+                        selectedSeatsDisplay.innerHTML = ` ${selectedSeatNumbers}`;
                         totalPriceDisplay.innerHTML = ` ${totalPrice} VND `;
                         
                          // Store selected seats and total price in local storage

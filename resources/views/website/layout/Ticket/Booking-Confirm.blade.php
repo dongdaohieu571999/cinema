@@ -56,7 +56,7 @@
                             @csrf                                
                             <div class="email">
                                 Full Name
-                                <input readonly  autofocus="autofocus " id="Email" name="user_fullname" type="text" value="{{Auth::user()->full_name}}"  class="valid"></input>
+                                <input  autofocus="autofocus " id="Email" name="user_fullname" type="text" value="{{Auth::user()->full_name}}"  class="valid"></input>
                                 <input type="hidden" name="user_id" value="{{Auth::user()->user_id}}">
                                 <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
                                 

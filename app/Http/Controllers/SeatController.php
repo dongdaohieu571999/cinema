@@ -8,6 +8,7 @@ use App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Seat;
 use App\Models\Hall;
+use App\Models\Booking;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
