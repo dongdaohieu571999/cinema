@@ -32,13 +32,26 @@
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <meta name="generator" content="nopCommerce" />
     
-    
+    <link rel="stylesheet" href="{{ asset('AdminCSS/assets/css/style1.css')}}" type="text/css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" type="text/css" >
     
     <link href="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/jquery.bxslider.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/library.meanmenu.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/smart.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/css/style.css') }}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{{ asset('AdminCSS/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('AdminCSS/assets/vendors/css/vendor.bundle.base.css')}}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+   
+    
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{{ asset('AdminCSS/assets/images/favicon.ico')}}" />
 
     <script src="{{ asset('WebsiteCSS/Scripts/jquery-1.7.1.min.js') }}"></script>
 <script src="{{ asset('WebsiteCSS/Scripts/jquery.unobtrusive-ajax.min.js') }}"></script>
@@ -48,6 +61,8 @@
 <script src="{{ asset('WebsiteCSS/Scripts/jquery.blueberry.js') }}"></script>
 <script src="{{ asset('WebsiteCSS/Scripts/writerJS.js') }}"></script>
 <script src="{{ asset('WebsiteCSS/Scripts/jquery.collapse.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
     

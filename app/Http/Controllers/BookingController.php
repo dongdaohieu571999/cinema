@@ -22,6 +22,14 @@ use Session;
 
 class BookingController extends Controller
 {
+    //User Function
+    public function user_booking()
+    {
+        $user_id = Auth::user()->user_id;
+        $bookings = Booking::where('user_id', 'LIKE', '%'.$user_id.'%')->get();
+        return view('website.layout.User.OrderHistory', compact('bookings'));
+    }
+
     //Admin Function
     public function index()
     {

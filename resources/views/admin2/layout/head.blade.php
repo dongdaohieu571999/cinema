@@ -15,6 +15,7 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('AdminCSS/assets/css/style.css')}}">
+    
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('AdminCSS/assets/images/favicon.ico')}}" />
   </head>

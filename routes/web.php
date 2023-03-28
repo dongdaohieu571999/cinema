@@ -240,5 +240,18 @@ use App\Http\Controllers\BookingController;
         return view('website.layout.Ticket.Successful-Booking');
     })
         ->name('booking.success');
+
+    // User Profile
+    Route::get('/UserProfile',  function(){
+        return view('website.layout.User.UserProfile');        
+    })
+        ->name('user.profile');  
+    
+    Route::post('/updateYourProfile', [UserController::class, 'user_self_update'])
+    -> name('user.self.update');
+
+    Route::get('/BookingHistory', [BookingController::class, 'user_booking'])
+        -> name('user.booking.history');
+      
     
         
