@@ -7,6 +7,7 @@ use App\Http\Controllers\HallController;
 use App\Http\Controllers\SeatController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -156,7 +157,7 @@ use App\Http\Controllers\MovieController;
     Route::post('/Seat_updated', [SeatController::class, 'seat_update'])
         -> name('seat.update');
 
-    Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_destroy'])
+    Route::get('/Seat_delete/{seat_id}', [SeatController::class, 'seat_delete'])
         ->name('seat.delete');
 
     // Admin Movie Management
@@ -177,6 +178,13 @@ use App\Http\Controllers\MovieController;
 
     Route::get('/Movie_delete/{m_id}', [MovieController::class, 'movie_delete'])
         ->name('movie.delete');
+
+    // Admin Booking Management
+    Route::get('/BookingManagement', [BookingController::class, 'index'])
+        -> name('booking.index');
+
+    Route::get('/Booking_delete/{booking_id}', [BookingController::class, 'booking_delete'])
+        ->name('booking.delete');
 
 // User Routes
 
@@ -200,12 +208,37 @@ use App\Http\Controllers\MovieController;
 
 // Website Routes
 
-Route::get('/', [MovieController::class, 'index_user_nowshowing'])
+
+    // Movie 
+    Route::get('/', [MovieController::class, 'index_user_nowshowing'])
     -> name('movie.indexUser');
 
-Route::get('/adHomepage', [MovieController::class, 'index_admin_nowshowing'])
-    -> name('movie.indexAdmin');
+    Route::get('/adHomepage', [MovieController::class, 'index_admin_nowshowing'])
+        -> name('movie.indexAdmin');
 
-Route::get('/moviedetail/{m_id}', [MovieController::class, 'movie_detail'])
-    -> name('movie.detail');
+    Route::get('/moviedetail/{m_id}', [MovieController::class, 'movie_detail'])
+        -> name('movie.detail');
+
+    // Ticket Booking
+   
+
+    Route::get('/seat-select/{show_id}', [ShowController::class, 'show_seat_select'])
+        -> name('seat.select');
+
+    Route::get('/booking-confirm/{show_id}', [ShowController::class, 'show_checkout'])
+        ->name('show.checkout');
+    
+    Route::get('/payment',  function(){
+        return view('website.layout.Ticket.Payment');        
+    })
+        ->name('show.payment');    
+
+    Route::post('/checkout', [BookingController::class, 'booking_store'])
+        -> name('booking.store');
+    
+    Route::get('/booking-successful', function(){
+        return view('website.layout.Ticket.Successful-Booking');
+    })
+        ->name('booking.success');
+    
         

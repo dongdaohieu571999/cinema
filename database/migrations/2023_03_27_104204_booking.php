@@ -17,9 +17,10 @@ return new class extends Migration
             $table->increments('booking_id');
             $table->integer('user_id')->unsigned(); 
             $table ->foreign('user_id')->references('user_id')->on('users');
-            $table->integer('ticket_id')->unsigned(); 
-            $table ->foreign('ticket_id')->references('ticket_id')->on('ticket');
-            $table->string('booking_date');
+            $table->integer('show_id')->unsigned(); 
+            $table ->foreign('show_id')->references('show_id')->on('show');
+            $table->string('seat_number');
+            $table->string('total_price');
             $table->timestamps();
         });
     }

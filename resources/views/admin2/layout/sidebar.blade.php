@@ -44,6 +44,12 @@
               </div>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/BookingManagement">
+                <span class="menu-title">Booking Management</span>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/ShowManagement">
                 <span class="menu-title">Show Management</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>

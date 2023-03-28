@@ -59,33 +59,39 @@
                         <section role="tabpanel" class="tab-pane active" id="schedule" style="height: 250px;">
                             <div class="movie-detail-list row">
                                 <div class="movie-detail-list__item">
-                                            <p class="showtime__day">Chủ Nhật-19-03-2023</p>
+                                            @foreach ($selected_movie_show as $show)
+                                            <p class="showtime__day">{{$show->showdate}}</p>
                                             <div class="showtime">
                                                 <ul class="showtime__list">
-                                                    <li class="showtime__list__item selected">
-                                                        <span><a href="/PlanScreenings/BookTicket?pId=302770">10:00</a></span>
-                                                    </li>
                                                     <li class="showtime__list__item">
-                                                        <span><a href="/PlanScreenings/BookTicket?pId=302776">10:30</a></span>
-                                                        
+                                                    <script>
+                                                        function LoginWarning(){
+                                                            alert("Please login first!");
+                                                        }
+                                                    </script>
+                                                        <span>
+                                                        @if(session()->has('user'))
+                                                            <a href="{{route('seat.select', $show->show_id)}}">{{$show->stt_time}}</a>
+                                                        @else
+                                                        <a onclick="LoginWarning()">{{$show->stt_time}}</a>
+                                                        </span>
+                                                        @endif                                                        
                                                     </li>
-                                                    
-
-
                                                 </ul>
                                             </div>
+                                            
                                             <div class="movie-detail-type">
                                                     <div class="type-2d"><span>2D</span></div>
-
-
                                             </div>
+                                            <br>
+                                            @endforeach
                                 </div>
                             </div>
                         </section>
 
                         <div role="tabpanel" class="tab-pane" id="other1">
                             <br></br>
-                        <div><center><iframe width="504" align="center" height="283" src="https://www.youtube.com/embed/{{$selected_movie->trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center></div>
+                        <div><center><iframe width="756" align="center" height="424" src="https://www.youtube.com/embed/{{$selected_movie->trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center></div>
                             <br></br>
                         </div>
 
@@ -122,11 +128,11 @@
                             <a href="{{ route('movie.detail', $movie->m_id) }}" style="color:black;font-size:85%;">{{$movie->name}}</a>
                         </div>
                         <div class="description_phimkhac">
-                            <strong>Genres:</strong> {{$selected_movie->genre}} <br>
-                            <strong>Duration:</strong> {{$selected_movie->duration}} <br>
-                            <strong>Actors:</strong> {{$selected_movie->actors}} <br>
-                            <strong>Director:</strong> {{$selected_movie->director}} <br>
-                            <strong>Premiere:</strong> {{$selected_movie->premiere}} <br>
+                            <strong>Genres:</strong> {{$movie->genre}} <br>
+                            <strong>Duration:</strong> {{$movie->duration}} <br>
+                            <strong>Actors:</strong> {{$movie->actors}} <br>
+                            <strong>Director:</strong> {{$movie->director}} <br>
+                            <strong>Premiere:</strong> {{$movie->premiere}} <br>
                         </div>
                         <br>
                        

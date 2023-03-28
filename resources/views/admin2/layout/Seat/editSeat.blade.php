@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-body">
                         <h4 class="card-title">Seat Management</h4>
-                        <p class="card-description"> Add New Seat </p>
+                        <p class="card-description"> Edit Seat {{$seat->seat_id}} </p>
                         <form class="forms-sample" action="{{ route ('seat.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf                       
                         <div class="form-group">
@@ -24,10 +24,10 @@
                                 <!-- <option value=" {{ $seat->seat_row }}" >{{$seat->seat_row}}</option> -->
                                 
                                 <option hidden="hidden" value="{{$seat->seat_row}}" {{ $row_selected == $seat->seat_row ? 'selected="selected"' : '' }}>{{ $seat->seat_row }}</option>
-                                <option value="T1">T1</option>
-                                <option value="T2">T2</option>
-                                <option value="T3">T3</option>
-                                <option value="T4">T4</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -46,6 +46,8 @@
                                 <option value="10">10</option>
                                 <option value="11">11</option>
                                 <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
                             </select>
                         </div>                              
                         <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
