@@ -141,7 +141,7 @@
                         </div>
                         <br>
                        
-                            <button class="btn-muave" style="background-color:red; border:1px;width:100px;height:30px" onclick="window.location.href='/PlanScreenings/Sessiontimes?filmId=9926'">TICKET</button>
+                        <a href="{{ route('movie.detail', $movie->m_id) }}"><button class="btn-muave" style="background-color:red; border:1px;width:100px;height:30px">TICKET</button></a>
                     </div>
                 </div>
                 @endforeach
