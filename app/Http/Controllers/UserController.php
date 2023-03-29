@@ -7,6 +7,7 @@ use App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Movie;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
@@ -240,10 +241,14 @@ class UserController extends Controller
 
             if (Auth::user()->role_id == 2) {
             
+                $nowshowing_movies=Movie::where('status','LIKE','%'.'Now Showing'.'%')
+                ->get();
+                $comingsoon_movies=Movie::where('status','LIKE','%'.'Coming Soon'.'%')
+                ->get();
                 $userEmail = Auth::user()->full_name;
                 $request->session()->put('user',$userEmail);
 
-            return view('website.layout.homepage');
+            return view('website.layout.homepage', compact('nowshowing_movies','comingsoon_movies'));
 
             } else {
                 $userEmail = Auth::user()->full_name;
