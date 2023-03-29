@@ -61,9 +61,22 @@ class MovieController extends Controller
         $startDate = Carbon::today()->subHour();
         $endDate = Carbon::today()->addDays(7);
         $movie_show = Show::where('m_id','LIKE','%'.$m_id.'%');
-        $selected_movie_show = $movie_show->whereBetween('showdate', [$startDate, $endDate])
-        ->orderBy('showdate','asc')->get();
-        return view('website.layout.Movie.MovieDetail',compact('nowshowing_movies','selected_movie_show'), ['selected_movie' => $selected_movie]);
+        $selected_movie_showdate = $movie_show->whereBetween('showdate', [$startDate, $endDate])
+        ->select('showdate')
+        ->orderBy('showdate', 'asc')
+        ->groupBy('showdate')
+        ->get();
+        // // dd($selected_movie_showdate);
+        $selected_movie_showtime = collect();
+        foreach ($selected_movie_showdate as $show) {
+            $movie_showtime = Show::where('showdate', $show->showdate)
+                ->orderBy('stt_time')
+                ->get();
+            $selected_movie_showtime = $selected_movie_showtime->merge($movie_showtime);
+        }
+        
+
+        return view('website.layout.Movie.MovieDetail',compact('nowshowing_movies','selected_movie_showdate', 'selected_movie_showtime'), ['selected_movie' => $selected_movie]);
         
     }
 

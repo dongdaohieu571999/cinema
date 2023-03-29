@@ -59,24 +59,29 @@
                         <section role="tabpanel" class="tab-pane active" id="schedule" style="height: 250px;">
                             <div class="movie-detail-list row">
                                 <div class="movie-detail-list__item">
-                                            @foreach ($selected_movie_show as $show)
-                                            <p class="showtime__day">{{$show->showdate}}</p>
+                                        <!-- Dung group by hoac kiem tra show -->
+                                            @foreach ($selected_movie_showdate as $showdate)
+                                            <p class="showtime__day">{{$showdate->showdate}}</p>
                                             <div class="showtime">
                                                 <ul class="showtime__list">
-                                                    <li class="showtime__list__item">
-                                                    <script>
-                                                        function LoginWarning(){
-                                                            alert("Please login first!");
-                                                        }
-                                                    </script>
-                                                        <span>
-                                                        @if(session()->has('user'))
-                                                            <a href="{{route('seat.select', $show->show_id)}}">{{$show->stt_time}}</a>
-                                                        @else
-                                                        <a onclick="LoginWarning()">{{$show->stt_time}}</a>
-                                                        </span>
-                                                        @endif                                                        
-                                                    </li>
+                                                    @foreach ($selected_movie_showtime as $showtime)
+                                                        @if($showdate->showdate == $showtime->showdate)
+                                                        <li class="showtime__list__item">
+                                                        <script>
+                                                            function LoginWarning(){
+                                                                alert("Please login first!");
+                                                            }
+                                                        </script>
+                                                            <span>
+                                                            @if(session()->has('user'))
+                                                                <a href="{{route('seat.select', $showtime->show_id)}}">{{$showtime->stt_time}}</a>
+                                                            @else
+                                                            <a onclick="LoginWarning()">{{$showtime->stt_time}}</a>
+                                                            </span>
+                                                            @endif                                                        
+                                                        </li>
+                                                        @endif
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                             
