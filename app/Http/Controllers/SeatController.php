@@ -26,6 +26,7 @@ class SeatController extends Controller
 
     }
 
+
     public function index_hall1()
     {
         $seats=Seat::where('hall_id','LIKE','1')
@@ -41,6 +42,7 @@ class SeatController extends Controller
         return view('admin2.layout.Seat.informationSeat', compact('seats'));
 
     }
+
 
     public function index_hall3()
     {
@@ -73,6 +75,8 @@ class SeatController extends Controller
 
     }
     
+    
+
 
     public function seat_edit($seat_id)
     {

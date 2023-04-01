@@ -67,6 +67,7 @@ class HallController extends Controller
             }
         }
     }
+    
 
     public function hall_destroy($hall_id)
     {
