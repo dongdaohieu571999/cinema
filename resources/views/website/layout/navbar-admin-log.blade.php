@@ -149,9 +149,7 @@
     <li class="last"><a href="http://cskh.chieuphimquocgia.com.vn">MEMBERS</a></li>
     
 </ul>
-        <div class="button_mua button_mua_home">
-            <a href="/PlanScreenings/Sessiontimes"><img src="{{ asset('WebsiteCSS/Themes/RapChieuPhim/Content/content.v2/images/ticket.png') }}" alt=""> TICKET BOOKING </a>
-        </div>
+        
     <input  type="hidden" id="hidden-cutomerid" value="0"/>
 
     </div>
